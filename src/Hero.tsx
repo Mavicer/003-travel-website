@@ -2,22 +2,11 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Lock } from 'lucide-react';
 
-/*
- * ─── Background media ───────────────────────────────────────────
- * TO SWITCH TO VIDEO:
- *   1. Place your hero.mp4 in public/
- *   2. Set USE_VIDEO = true and update the src below.
- * The image fallback is a royalty-free Unsplash photo (mountain range).
- */
-const USE_VIDEO = false;
-const VIDEO_SRC =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260510_060007_60275ce7-030c-4668-a160-8f364ec537d3.mp4';
 const IMAGE_SRC = '/hero-fallback.jpg';
 
 const NAV_LINKS = ['JOURNEY', 'BENEFITS', 'JOURNAL', 'GUIDEBOOK'];
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const bgContainerRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -78,12 +67,6 @@ export default function Hero() {
     }
   }, []);
 
-  const handleVideoLoaded = () => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 1.25;
-    }
-  };
-
   return (
     <div
       className="min-h-screen bg-black text-white overflow-x-hidden relative"
@@ -95,24 +78,11 @@ export default function Hero() {
           ref={bgContainerRef}
           className="absolute inset-0 scale-[1.08] origin-center"
         >
-          {USE_VIDEO ? (
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-              src={VIDEO_SRC}
-              onLoadedMetadata={handleVideoLoaded}
-            />
-          ) : (
-            <img
-              src={IMAGE_SRC}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          )}
+          <img
+            src={IMAGE_SRC}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </div>
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-black/35" />

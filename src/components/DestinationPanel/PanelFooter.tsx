@@ -2,9 +2,10 @@ import { Sparkles, ArrowLeft } from 'lucide-react';
 
 interface Props {
   onClose: () => void;
+  onAIClick?: () => void;
 }
 
-export default function PanelFooter({ onClose }: Props) {
+export default function PanelFooter({ onClose, onAIClick }: Props) {
   return (
     <div
       className="px-6 sm:px-10 py-16 border-t"
@@ -38,15 +39,14 @@ export default function PanelFooter({ onClose }: Props) {
         </p>
         <button
           type="button"
-          className="inline-flex items-center gap-2 bg-white text-black text-[14px] font-medium rounded-full px-6 py-3 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] opacity-50 cursor-not-allowed"
+          onClick={onAIClick}
+          className="inline-flex items-center gap-2 bg-white text-black text-[14px] font-medium rounded-full px-6 py-3 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
           style={{
             fontFamily: "'Inter', sans-serif",
           }}
-          disabled
-          title="即将推出"
         >
           <Sparkles size={15} strokeWidth={1.5} />
-          即将推出
+          开始规划
         </button>
       </div>
 

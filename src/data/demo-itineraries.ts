@@ -1807,4 +1807,608 @@ export const DEMO_ITINERARIES: Record<
       ],
     },
   },
+
+  /* ═══════════════════════════════════════════════════════════
+     上海 — 情侣·都市摩登之旅
+     ═══════════════════════════════════════════════════════════ */
+  shanghai: {
+    couple: {
+      title: '上海三日·摩登浪漫之旅',
+      overview:
+        '外滩的百年风华、法租界的梧桐浪漫、陆家嘴的未来之光——为都市恋人定制的上海精致假期。',
+      itinerary: [
+        {
+          day: 1,
+          title: '外滩与老城厢',
+          items: [
+            {
+              time: '09:00',
+              title: '外滩晨间漫步',
+              description:
+                '从外白渡桥出发，牵着手沿黄浦江西岸漫步。清晨的外滩人少，万国建筑群在晨光中格外温柔。',
+              attractionId: 'the-bund',
+              type: '活动',
+            },
+            {
+              time: '11:00',
+              title: '豫园与城隍庙',
+              description:
+                '在江南园林的假山回廊间穿行，在九曲桥上喂锦鲤。然后去南翔馒头店分享一笼小笼包。',
+              attractionId: 'yu-garden',
+              type: '活动',
+            },
+            {
+              time: '12:30',
+              title: '南翔馒头店',
+              description:
+                '上海最负盛名的小笼包。两个人分一笼原味，一笼蟹粉——醋和姜丝的搭配是灵魂。',
+              type: '餐饮',
+            },
+            {
+              time: '14:30',
+              title: '新天地下午茶',
+              description:
+                '在石库门老建筑改造的精品咖啡馆中享受午后时光。选一个二楼靠窗的位子，看弄堂里的人来人往。',
+              attractionId: 'xintiandi',
+              type: '活动',
+            },
+            {
+              time: '17:30',
+              title: '陆家嘴云端日落',
+              description:
+                '登上上海中心118层观光厅，在云端看日落染红黄浦江。城市在你们脚下——这一刻只属于两个人。',
+              attractionId: 'lujiazui',
+              type: '活动',
+            },
+            {
+              time: '20:00',
+              title: '外滩江景晚餐',
+              description:
+                '在外滩的江景餐厅享用创新本帮菜。窗外的外滩灯火是上海为你们准备的浪漫背景。',
+              type: '餐饮',
+            },
+          ],
+        },
+        {
+          day: 2,
+          title: '梧桐与艺术',
+          items: [
+            {
+              time: '09:30',
+              title: '法租界单车漫游',
+              description:
+                '从武康大楼开始，骑车穿行于梧桐树下的文艺街区。阳光透过叶隙洒在红砖墙上，你们是这画面的一部分。',
+              attractionId: 'french-concession',
+              type: '活动',
+            },
+            {
+              time: '11:30',
+              title: '安福路 Brunch',
+              description:
+                '在安福路最chic的咖啡馆享受悠闲的早午餐。牛油果吐司配冰美式——上海式的周末仪式。',
+              type: '餐饮',
+            },
+            {
+              time: '14:00',
+              title: '西岸美术馆',
+              description:
+                '在黄浦江畔的世界级美术馆中感受当代艺术。互相解读看不懂的作品——这是恋人之间的专属游戏。',
+              attractionId: 'west-bund',
+              type: '活动',
+            },
+            {
+              time: '17:00',
+              title: '思南公馆下午茶',
+              description:
+                '在百年花园洋房中享受老上海的优雅下午茶。银制餐具、三层点心架、窗外玫瑰园——仪式感满分。',
+              type: '休息',
+            },
+            {
+              time: '19:30',
+              title: '黄浦江夜游',
+              description:
+                '乘游船在黄浦江上飘荡45分钟。外滩的古典与陆家嘴的未来在夜色中同框——是合照的最佳时机。',
+              type: '活动',
+            },
+            {
+              time: '21:00',
+              title: 'Speakeasy 酒吧',
+              description:
+                '在法租界老洋房二楼找到那家没有招牌的鸡尾酒吧。昏暗的灯光、爵士乐、两杯特调——上海的夜才刚开始。',
+              type: '餐饮',
+            },
+          ],
+        },
+        {
+          day: 3,
+          title: '弄堂与告别',
+          items: [
+            {
+              time: '08:30',
+              title: '弄堂早餐',
+              description:
+                '在静安寺附近的弄堂深处，找到阿姨摆的小摊。咸豆浆、粢饭团、油条——这是上海人从小吃到大的清晨味道。',
+              type: '餐饮',
+            },
+            {
+              time: '10:30',
+              title: '田子坊寻宝',
+              description:
+                '穿行于泰康路的弄堂迷宫。在手作小店中为彼此挑选一件独一无二的纪念品。',
+              type: '活动',
+            },
+            {
+              time: '12:30',
+              title: '本帮菜午餐',
+              description:
+                '在老字号品尝红烧肉、油爆虾、腌笃鲜。浓油赤酱的本帮菜，是上海写给味蕾的情书。',
+              type: '餐饮',
+            },
+            {
+              time: '14:30',
+              title: 'M50创意园',
+              description:
+                '在莫干山路旧工厂改造的艺术区中探索画廊。买一幅年轻艺术家的版画——这是你们可以带回家的上海。',
+              type: '活动',
+            },
+            {
+              time: '17:00',
+              title: '外滩告别日落',
+              description:
+                '回到外滩，在浦江边找一张长椅。看太阳从陆家嘴摩天楼之间落下去，天空从金到粉到紫——这是上海给你们的告别礼物。',
+              attractionId: 'the-bund',
+              type: '活动',
+            },
+            {
+              time: '19:30',
+              title: '告别晚宴',
+              description:
+                '在外滩源的米其林餐厅，以一顿精致的创新料理为上海之旅画上完美的句号。',
+              type: '餐饮',
+            },
+          ],
+        },
+      ],
+    },
+    default: {
+      title: '上海三日·都市精华之旅',
+      overview:
+        '从外滩的百年风华到陆家嘴的未来之光，从梧桐树下的老洋房到世界级艺术殿堂——上海的三天，浓缩了中国最精彩的都市体验。',
+      itinerary: [
+        {
+          day: 1,
+          title: '外滩与老城厢',
+          items: [
+            {
+              time: '09:00',
+              title: '外滩漫步',
+              description: '从外白渡桥出发，沿黄浦江欣赏万国建筑群。',
+              attractionId: 'the-bund',
+              type: '活动',
+            },
+            {
+              time: '11:00',
+              title: '豫园',
+              description: '探访上海保存最完好的明代江南园林。',
+              attractionId: 'yu-garden',
+              type: '活动',
+            },
+            {
+              time: '12:30',
+              title: '南翔小笼包',
+              description: '在豫园内品尝上海最正宗的小笼包。',
+              type: '餐饮',
+            },
+            {
+              time: '14:30',
+              title: '上海博物馆',
+              description: '在人民广场参观中国古代艺术珍品。',
+              type: '活动',
+            },
+            {
+              time: '17:00',
+              title: '新天地',
+              description: '在石库门建筑群中感受上海的新旧交融。',
+              attractionId: 'xintiandi',
+              type: '活动',
+            },
+            {
+              time: '19:30',
+              title: '新天地晚餐',
+              description: '在老建筑里的精品餐厅品尝融合上海菜。',
+              type: '餐饮',
+            },
+          ],
+        },
+        {
+          day: 2,
+          title: '梧桐区与当代上海',
+          items: [
+            {
+              time: '09:30',
+              title: '法租界单车漫游',
+              description: '骑车穿行于梧桐树下的文艺街区。',
+              attractionId: 'french-concession',
+              type: '活动',
+            },
+            {
+              time: '11:30',
+              title: '安福路 Brunch',
+              description: '在网红咖啡馆享受悠闲早午餐。',
+              type: '餐饮',
+            },
+            {
+              time: '14:00',
+              title: '西岸美术馆',
+              description: '在黄浦江畔感受中国当代艺术。',
+              attractionId: 'west-bund',
+              type: '活动',
+            },
+            {
+              time: '16:30',
+              title: '陆家嘴登高',
+              description: '登上海中心俯瞰城市全景。',
+              attractionId: 'lujiazui',
+              type: '活动',
+            },
+            {
+              time: '19:00',
+              title: '黄浦江夜游',
+              description: '乘船欣赏两岸灯火。',
+              type: '活动',
+            },
+            {
+              time: '20:00',
+              title: '外滩晚餐',
+              description: '在江景餐厅享用创新本帮料理。',
+              type: '餐饮',
+            },
+          ],
+        },
+        {
+          day: 3,
+          title: '弄堂与日常',
+          items: [
+            {
+              time: '08:30',
+              title: '弄堂早餐',
+              description: '在静安寺弄堂里寻找老上海早点。',
+              type: '餐饮',
+            },
+            {
+              time: '10:30',
+              title: '田子坊',
+              description: '穿行于泰康路的创意弄堂。',
+              type: '活动',
+            },
+            {
+              time: '12:30',
+              title: '本帮菜午餐',
+              description: '在老字号品尝红烧肉与油爆虾。',
+              type: '餐饮',
+            },
+            {
+              time: '14:30',
+              title: 'M50创意园',
+              description: '在旧工厂改造的艺术区中探索画廊。',
+              type: '活动',
+            },
+            {
+              time: '17:00',
+              title: '思南公馆下午茶',
+              description: '在百年花园洋房中享受老上海时光。',
+              type: '休息',
+            },
+            {
+              time: '19:30',
+              title: '告别晚餐',
+              description: '以一顿精致料理为上海之行画上句号。',
+              type: '餐饮',
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  /* ═══════════════════════════════════════════════════════════
+     九寨沟 — 独行·自然疗愈之旅
+     ═══════════════════════════════════════════════════════════ */
+  jiuzhaigou: {
+    solo: {
+      title: '九寨沟三日·自然疗愈之旅',
+      overview:
+        '五彩海子、原始森林、藏寨炊烟——在人间仙境中与自己独处，让大自然治愈都市里疲惫的灵魂。',
+      itinerary: [
+        {
+          day: 1,
+          title: '日则沟精华',
+          items: [
+            {
+              time: '07:00',
+              title: '镜海晨光',
+              description:
+                '清晨无风时独自抵达镜海。湖面如镜，雪峰与森林完美倒映——这份宁静是你给自己的礼物。',
+              attractionId: 'mirror-lake',
+              type: '活动',
+            },
+            {
+              time: '09:00',
+              title: '五花海漫游',
+              description:
+                '在阳光直射湖面时到达五花海。一个人趴在栈道栏杆上，看水底的古木在五色湖水中若隐若现——大自然才是最好的艺术家。',
+              attractionId: 'five-flower-lake',
+              type: '活动',
+            },
+            {
+              time: '11:00',
+              title: '原始森林深呼吸',
+              description:
+                '沿日则沟栈道深入原始针叶林。松萝垂挂，空气中负氧离子爆表。闭上眼睛，只听见风声和鸟鸣。',
+              attractionId: 'primeval-forest',
+              type: '活动',
+            },
+            {
+              time: '12:30',
+              title: '诺日朗简餐',
+              description: '在景区内的诺日朗游客中心享用川味简餐。一个人吃饭的好处：想吃什么都行。',
+              type: '餐饮',
+            },
+            {
+              time: '14:00',
+              title: '诺日朗瀑布',
+              description:
+                '站在270米宽的瀑布前，水雾扑面。一个人看瀑布不需要说话——只需要感受大自然的磅礴之力。',
+              attractionId: 'nuorilang-falls',
+              type: '活动',
+            },
+            {
+              time: '18:00',
+              title: '藏家牦牛肉火锅',
+              description:
+                '在沟口的藏家乐，一个人也要点一份牦牛肉火锅。热腾腾的汤锅配青稞酒——这是对徒步一天最好的犒赏。',
+              type: '餐饮',
+            },
+          ],
+        },
+        {
+          day: 2,
+          title: '树正沟与藏文化',
+          items: [
+            {
+              time: '07:30',
+              title: '树正瀑布群',
+              description:
+                '晨光中独自走过数十个钙华瀑布。水流在丛林间奔流而下——一个人可以按自己的节奏停下来拍照。',
+              attractionId: 'shuzheng-waterfalls',
+              type: '活动',
+            },
+            {
+              time: '10:00',
+              title: '树正群海',
+              description:
+                '沿栈道穿行于大小不一的海子之间。每一个都如宝石般碧蓝——一个人独享这片蓝色的奢侈。',
+              type: '活动',
+            },
+            {
+              time: '12:00',
+              title: '树正寨藏式午餐',
+              description:
+                '在树正寨品尝酥油茶、青稞饼与牦牛酸奶。和藏族阿妈聊聊天——一个人的旅行更容易遇到意外的温暖。',
+              type: '餐饮',
+            },
+            {
+              time: '14:00',
+              title: '扎如寺祈福',
+              description:
+                '参访千年本教寺庙。一个人转动经筒、悬挂经幡——在海拔3000米的雪山下，为自己和家人祈福。',
+              attractionId: 'zarhu-temple',
+              type: '活动',
+            },
+            {
+              time: '16:30',
+              title: '藏寨探访',
+              description:
+                '走进当地藏民的家。喝一碗酥油茶，听老人讲述九寨沟的故事。独行者的旅途中最珍贵的往往是这些偶然的相遇。',
+              type: '活动',
+            },
+            {
+              time: '19:00',
+              title: '锅庄舞之夜',
+              description:
+                '在藏寨广场与当地人一起围着篝火跳舞。没有人问你从哪里来——在这片星空下，大家都是旅人。',
+              type: '活动',
+            },
+          ],
+        },
+        {
+          day: 3,
+          title: '秘境与告别',
+          items: [
+            {
+              time: '06:30',
+              title: '日出摄影',
+              description:
+                '在专业向导带领下前往最佳机位，捕捉清晨第一缕光照亮雪山的瞬间。一个人的日出——不用等任何人，只需要对自己负责。',
+              type: '活动',
+            },
+            {
+              time: '09:00',
+              title: '熊猫海与箭竹海',
+              description:
+                '探访日则沟的第一对姐妹海子。在游客大潮到来之前，独享这片碧蓝的宁静。',
+              type: '活动',
+            },
+            {
+              time: '12:00',
+              title: '川西风味午餐',
+              description:
+                '在沟口的川菜馆点一份水煮牦牛肉与松茸炖鸡。一个人也要好好吃饭——这是九寨沟教会你的事。',
+              type: '餐饮',
+            },
+            {
+              time: '14:00',
+              title: '九寨天堂温泉',
+              description:
+                '在雪山环抱的温泉中舒缓两天的疲惫。闭上眼睛，回忆这三天的每一帧画面——这是九寨沟给你的最后礼物。',
+              type: '休息',
+            },
+            {
+              time: '16:30',
+              title: '藏族手工艺品',
+              description:
+                '在沟口购买藏族手工唐卡、牦牛毛围巾与松茸干货。带一份九寨沟回家——给你和你在乎的人。',
+              type: '活动',
+            },
+            {
+              time: '19:00',
+              title: '告别晚餐',
+              description:
+                '以一顿丰盛的川西料理为独自一人的九寨沟之旅画上句号。回去之后，你会有很多故事可以讲。',
+              type: '餐饮',
+            },
+          ],
+        },
+      ],
+    },
+    default: {
+      title: '九寨沟三日·人间仙境之旅',
+      overview:
+        '五彩海子、钙华瀑布、原始森林、藏寨风情——在世界上最美的自然景观中度过难忘的三天。',
+      itinerary: [
+        {
+          day: 1,
+          title: '日则沟精华',
+          items: [
+            {
+              time: '07:00',
+              title: '镜海晨光',
+              description: '清晨无风时拍摄完美的雪山森林倒影。',
+              attractionId: 'mirror-lake',
+              type: '活动',
+            },
+            {
+              time: '09:00',
+              title: '五花海',
+              description: '在阳光直射时欣赏五色湖水奇观。',
+              attractionId: 'five-flower-lake',
+              type: '活动',
+            },
+            {
+              time: '11:00',
+              title: '原始森林徒步',
+              description: '沿日则沟栈道深入原始针叶林。',
+              attractionId: 'primeval-forest',
+              type: '活动',
+            },
+            {
+              time: '12:30',
+              title: '诺日朗餐厅',
+              description: '在游客中心品尝川味简餐。',
+              type: '餐饮',
+            },
+            {
+              time: '14:00',
+              title: '诺日朗瀑布',
+              description: '欣赏中国最宽钙华瀑布的壮美。',
+              attractionId: 'nuorilang-falls',
+              type: '活动',
+            },
+            {
+              time: '18:00',
+              title: '藏家晚餐',
+              description: '牦牛肉火锅与青稞酒。',
+              type: '餐饮',
+            },
+          ],
+        },
+        {
+          day: 2,
+          title: '树正沟与藏文化',
+          items: [
+            {
+              time: '07:30',
+              title: '树正瀑布群',
+              description: '数十个钙华瀑布在丛林间奔流。',
+              attractionId: 'shuzheng-waterfalls',
+              type: '活动',
+            },
+            {
+              time: '10:00',
+              title: '树正群海',
+              description: '穿行于如宝石般碧蓝的海子之间。',
+              type: '活动',
+            },
+            {
+              time: '12:00',
+              title: '藏式午餐',
+              description: '酥油茶、青稞饼与牦牛酸奶。',
+              type: '餐饮',
+            },
+            {
+              time: '14:00',
+              title: '扎如寺',
+              description: '转动经筒，悬挂经幡祈福。',
+              attractionId: 'zarhu-temple',
+              type: '活动',
+            },
+            {
+              time: '16:30',
+              title: '藏寨探访',
+              description: '走进藏民的家，了解传统文化。',
+              type: '活动',
+            },
+            {
+              time: '19:00',
+              title: '锅庄舞之夜',
+              description: '与藏民围着篝火跳舞。',
+              type: '活动',
+            },
+          ],
+        },
+        {
+          day: 3,
+          title: '秘境与告别',
+          items: [
+            {
+              time: '06:30',
+              title: '日出摄影',
+              description: '在专业向导带领下拍摄晨光。',
+              type: '活动',
+            },
+            {
+              time: '09:00',
+              title: '熊猫海与箭竹海',
+              description: '日则沟最后的秘境海子。',
+              type: '活动',
+            },
+            {
+              time: '12:00',
+              title: '川西风味午餐',
+              description: '水煮牦牛肉与松茸炖鸡。',
+              type: '餐饮',
+            },
+            {
+              time: '14:00',
+              title: '温泉放松',
+              description: '在雪山环抱中舒缓疲惫。',
+              type: '休息',
+            },
+            {
+              time: '16:30',
+              title: '购买伴手礼',
+              description: '唐卡、牦牛毛围巾与松茸。',
+              type: '活动',
+            },
+            {
+              time: '19:00',
+              title: '告别晚餐',
+              description: '以丰盛的川西料理告别九寨沟。',
+              type: '餐饮',
+            },
+          ],
+        },
+      ],
+    },
+  },
 };

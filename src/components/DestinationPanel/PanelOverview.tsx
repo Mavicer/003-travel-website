@@ -8,9 +8,16 @@ interface Props {
   highlights: Highlight[];
 }
 
+type IconComponent = React.ComponentType<{
+  size?: number;
+  strokeWidth?: number;
+  className?: string;
+  style?: React.CSSProperties;
+}>;
+
 function getIcon(name: string) {
-  const Icon = (LucideIcons as Record<string, React.ComponentType<{ size?: number; strokeWidth?: number; className?: string }>>)[name];
-  return Icon || LucideIcons.MapPin;
+  const Icon = (LucideIcons as Record<string, IconComponent>)[name];
+  return Icon || (LucideIcons.MapPin as IconComponent);
 }
 
 /** Returns true when the character is a CJK unified ideograph — suitable for a drop cap. */

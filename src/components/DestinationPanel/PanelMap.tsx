@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback } from 'react';
 import Map, { Marker, NavigationControl } from 'react-map-gl/maplibre';
-import type { MapRef, MapLibreEvent } from 'react-map-gl/maplibre';
+import type { MapRef, MapEvent } from 'react-map-gl/maplibre';
 import * as maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { MapPin } from 'lucide-react';
@@ -51,7 +51,7 @@ export const DARK_STYLE = {
       },
     },
   ],
-};
+} as const;
 
 const CATEGORY_COLORS: Record<Attraction['category'], string> = {
   '地标': '#C8884B',
@@ -157,7 +157,7 @@ export default function PanelMap({
   const [mapLoaded, setMapLoaded] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  const handleMapLoad = useCallback((_e: MapLibreEvent) => {
+  const handleMapLoad = useCallback((_e: MapEvent) => {
     setMapLoaded(true);
   }, []);
 

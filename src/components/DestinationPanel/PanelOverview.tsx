@@ -16,8 +16,8 @@ type IconComponent = React.ComponentType<{
 }>;
 
 function getIcon(name: string) {
-  const Icon = (LucideIcons as Record<string, IconComponent>)[name];
-  return Icon || (LucideIcons.MapPin as IconComponent);
+  const icons = LucideIcons as unknown as Record<string, IconComponent>;
+  return icons[name] || (LucideIcons.MapPin as unknown as IconComponent);
 }
 
 /** Returns true when the character is a CJK unified ideograph — suitable for a drop cap. */

@@ -153,7 +153,6 @@ export default function AITripPlanner({
   const [tripResult, setTripResult] = useState<TripResult | null>(null);
   const [stepMessage, setStepMessage] = useState('');
   const [stepIndex, setStepIndex] = useState(0);
-  const [totalSteps, setTotalSteps] = useState(4);
   const [err, setErr] = useState('');
   const abortRef = useRef<AbortController | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -434,7 +433,7 @@ export default function AITripPlanner({
                 className="h-full rounded-full transition-all duration-700 ease-out"
                 style={{
                   background: `linear-gradient(90deg, #C8884B 0%, #D4A76A 100%)`,
-                  width: `${Math.max(5, (stepIndex / totalSteps) * 100)}%`,
+                  width: `${Math.max(5, (stepIndex / 4) * 100)}%`,
                 }}
               />
             </div>

@@ -17,7 +17,7 @@ interface DemoItinerary {
   itinerary: ItineraryDay[];
 }
 
-type PersonaKey = 'default' | 'couple' | 'family' | 'solo' | 'friends';
+export type PersonaKey = 'default' | 'couple' | 'family' | 'solo' | 'friends';
 
 export const DEMO_ITINERARIES: Record<
   string,
@@ -49,7 +49,7 @@ export const DEMO_ITINERARIES: Record<
               title: '和服散策',
               description:
                 '在专业着付师帮助下换上精致的京友禅和服，挽手漫步于二年坂和三年坂的石板路。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '11:30',
@@ -99,7 +99,7 @@ export const DEMO_ITINERARIES: Record<
               title: '茶道体验',
               description:
                 '在百年茶室中，茶道师为你们演绎一场完整的抹茶仪式。从帛纱的折叠到茶碗的转动，每一个动作都是时间的艺术。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '12:30',
@@ -156,7 +156,7 @@ export const DEMO_ITINERARIES: Record<
               title: '伏见清酒之旅',
               description:
                 '探访伏见的百年酒藏，品鉴三种不同精米步合的纯米大吟酿。为彼此挑选一瓶最喜欢的带回。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '15:30',
@@ -316,7 +316,7 @@ export const DEMO_ITINERARIES: Record<
               title: '伏见酒藏',
               description:
                 '探访百年酒造，品鉴三种纯米大吟酿。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '17:00',
@@ -372,7 +372,7 @@ export const DEMO_ITINERARIES: Record<
               description:
                 '悬崖边的现代酒庄，为你们预留了最佳观景位。品鉴 6 款火山风土葡萄酒。',
               attractionId: 'santo-winery',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '17:30',
@@ -400,7 +400,7 @@ export const DEMO_ITINERARIES: Record<
               title: '双体船巡游',
               description:
                 '乘豪华双体船环游火山口。甲板上只有你们和爱琴海的蓝。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '11:30',
@@ -457,7 +457,7 @@ export const DEMO_ITINERARIES: Record<
               title: '希腊烹饪课',
               description:
                 '在当地人家中一起学习制作番茄炸饼、蚕豆泥与蜂蜜核桃千层酥。两个人一起下厨的记忆最珍贵。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '13:30',
@@ -526,7 +526,7 @@ export const DEMO_ITINERARIES: Record<
               title: 'Santo 酒庄',
               description: '悬崖品酒，等待日落的暖金色光芒。',
               attractionId: 'santo-winery',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '18:30',
@@ -601,7 +601,7 @@ export const DEMO_ITINERARIES: Record<
               time: '11:00',
               title: '希腊烹饪课',
               description: '学习三道传统希腊菜。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '13:30',
@@ -682,7 +682,7 @@ export const DEMO_ITINERARIES: Record<
               description:
                 '在海拔1585米的天然温泉中浸泡，雪山环绕——这是独行者最好的自我犒赏。',
               attractionId: 'banff-upper-springs',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '19:30',
@@ -760,7 +760,7 @@ export const DEMO_ITINERARIES: Record<
               title: '野生动物巡游',
               description:
                 '跟随专业向导沿弓河河谷寻找麋鹿、山羊与黑熊。相机准备好——这是你与荒野的对话。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '13:00',
@@ -782,7 +782,7 @@ export const DEMO_ITINERARIES: Record<
               description:
                 '最后一次泡在班夫上温泉中，让雪山和星空成为这三天的最后记忆。',
               attractionId: 'banff-upper-springs',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '20:00',
@@ -836,7 +836,7 @@ export const DEMO_ITINERARIES: Record<
               title: '上温泉',
               description: '在雪山环抱中舒缓疲惫。',
               attractionId: 'banff-upper-springs',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '20:00',
@@ -923,7 +923,7 @@ export const DEMO_ITINERARIES: Record<
               time: '16:00',
               title: '野生动物巡游',
               description: '黄昏时分寻找野生动物。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '19:30',
@@ -970,7 +970,7 @@ export const DEMO_ITINERARIES: Record<
               title: '私人游船探险',
               description:
                 '包一艘传统 Gozzo 木船，沿海岸探索海蚀洞与隐秘海滩。在翡翠洞中轮流跳水。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '17:30',
@@ -1048,14 +1048,14 @@ export const DEMO_ITINERARIES: Record<
               title: '柠檬园探访',
               description:
                 '在百年柠檬梯田间漫步。亲手制作一瓶 Limoncello——带回家给没法来的朋友。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '11:00',
               title: '烹饪课挑战',
               description:
                 '在露台厨房中比赛谁做的意面最好。输的人负责洗碗，赢的人获得所有人的赞美。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '13:30',
@@ -1116,7 +1116,7 @@ export const DEMO_ITINERARIES: Record<
               time: '14:30',
               title: '私人游船',
               description: '乘传统木船探索海蚀洞与隐秘海滩。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '17:00',
@@ -1185,13 +1185,13 @@ export const DEMO_ITINERARIES: Record<
               time: '09:00',
               title: '柠檬园探访',
               description: '百年柠檬梯田与 Limoncello 酿造。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '11:00',
               title: '烹饪课',
               description: '学习手工意面与意式甜点。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '13:30',
@@ -1242,7 +1242,7 @@ export const DEMO_ITINERARIES: Record<
               title: '丛林日出瑜伽',
               description:
                 '在乌布丛林上方的瑜伽馆迎接晨光。闭上眼，听见的是鸟鸣、风声和自己的呼吸。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '09:00',
@@ -1265,7 +1265,7 @@ export const DEMO_ITINERARIES: Record<
               description:
                 '在千年圣泉的水流下接受净化。祭司的祝福声中，让泉水带走你不需要的一切。',
               attractionId: 'tirta-empul',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '17:00',
@@ -1307,7 +1307,7 @@ export const DEMO_ITINERARIES: Record<
               title: '咖啡庄园探访',
               description:
                 '品尝猫屎咖啡与巴厘香草茶。在庄园的吊床上小憩——独行者有无限的时间可以挥霍。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '14:00',
@@ -1342,21 +1342,21 @@ export const DEMO_ITINERARIES: Record<
               title: '最后一场日出瑜伽',
               description:
                 '在丛林瑜伽馆做最后一场拜日式。三天的时间，你已经能摸到脚尖了。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '09:00',
               title: '银器手作工坊',
               description:
                 '在匠人指导下，亲手打一枚银戒。刻上 "Bali" 和一个日期——这是你送给自己的礼物。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '11:30',
               title: '巴厘烹饪课',
               description:
                 '逛传统市场采购香料，然后学习制作沙爹、咖喱与巴厘甜品。这是你能带回家的巴厘岛。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '14:00',
@@ -1417,14 +1417,14 @@ export const DEMO_ITINERARIES: Record<
               time: '14:00',
               title: '银器工坊',
               description: '亲手打造银饰。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '16:30',
               title: '圣泉寺净化',
               description: '千年圣泉中的传统净化仪式。',
               attractionId: 'tirta-empul',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '19:00',
@@ -1455,7 +1455,7 @@ export const DEMO_ITINERARIES: Record<
               time: '11:00',
               title: '咖啡庄园探访',
               description: '品尝猫屎咖啡与巴厘香草茶。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '13:00',
@@ -1486,7 +1486,7 @@ export const DEMO_ITINERARIES: Record<
               time: '06:30',
               title: '日出瑜伽',
               description: '丛林瑜伽馆中迎接晨光。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '09:00',
@@ -1498,7 +1498,7 @@ export const DEMO_ITINERARIES: Record<
               time: '10:30',
               title: '巴厘烹饪课',
               description: '学习三道巴厘经典菜肴。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '13:30',
@@ -1558,7 +1558,7 @@ export const DEMO_ITINERARIES: Record<
               title: '冰川徒步',
               description:
                 '穿上冰爪踏上万年蓝冰。穿越冰裂缝与蓝洞——脚下是几万年前的冰雪。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '14:00',
@@ -1641,7 +1641,7 @@ export const DEMO_ITINERARIES: Record<
               title: '骑马穿越草原',
               description:
                 '跟随高乔牧人骑上克里奥尔马，穿越巴塔哥尼亚金色草原。没有信号、没有噪音——只有风和你。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '12:00',
@@ -1702,7 +1702,7 @@ export const DEMO_ITINERARIES: Record<
               time: '12:00',
               title: '冰川徒步',
               description: '穿冰爪踏上万年蓝冰。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '14:00',
@@ -1775,7 +1775,7 @@ export const DEMO_ITINERARIES: Record<
               time: '09:00',
               title: '骑马穿越草原',
               description: '跟随高乔牧人穿越巴塔哥尼亚草原。',
-              type: '体验',
+              type: '活动',
             },
             {
               time: '12:00',

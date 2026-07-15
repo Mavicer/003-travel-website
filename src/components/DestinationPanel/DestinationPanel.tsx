@@ -236,8 +236,8 @@ export default function DestinationPanel({
    Each follows the same visual language: amber label, subtle typography
    ══════════════════════════════════════════════════════════════════ */
 
-import type { Attraction, Experience, ItineraryDay, SeasonInfo, PracticalInfo } from '../../data/destinations';
-import { Trees, MapPin, Star, Clock, ChevronRight } from 'lucide-react';
+import type { Attraction, Experience, SeasonInfo, PracticalInfo } from '../../data/destinations';
+import { MapPin, Clock } from 'lucide-react';
 
 /* ── Attractions ── */
 function AttractionsSection({ attractions }: { attractions: Attraction[] }) {

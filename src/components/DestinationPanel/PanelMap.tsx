@@ -21,10 +21,10 @@ export { type Coordinates, type Attraction };
 /** Dark cinematic style — CartoDB light_all base + paint darkening.
  *  {ratio} → @2x on Retina (512px PNG), empty on 1× (256px PNG). */
 export const DARK_STYLE = {
-  version: 8,
+  version: 8 as const,
   sources: {
     osm: {
-      type: 'raster',
+      type: 'raster' as const,
       tiles: ['https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{ratio}.png'],
       tileSize: 256,
       attribution:
@@ -35,12 +35,12 @@ export const DARK_STYLE = {
     // Solid dark background so unloaded/bare areas match the brand palette
     {
       id: 'bg',
-      type: 'background',
+      type: 'background' as const,
       paint: { 'background-color': '#0a0a0f' },
     },
     {
       id: 'osm-layer',
-      type: 'raster',
+      type: 'raster' as const,
       source: 'osm',
       paint: {
         'raster-brightness-min': 0,
@@ -51,7 +51,7 @@ export const DARK_STYLE = {
       },
     },
   ],
-} as const;
+};
 
 const CATEGORY_COLORS: Record<Attraction['category'], string> = {
   '地标': '#C8884B',

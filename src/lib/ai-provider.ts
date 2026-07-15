@@ -16,6 +16,7 @@
  */
 
 import type { Destination, ItineraryDay } from '../data/destinations';
+import type { PersonaKey } from '../data/demo-itineraries';
 
 /* ══════════════════════════════════════════════════════════════
    Types
@@ -89,23 +90,24 @@ export class AIAbortError extends Error {
 }
 
 export class AIValidationError extends Error {
-  constructor(
-    message: string,
-    public readonly rawResponse?: unknown,
-  ) {
+  rawResponse?: unknown;
+
+  constructor(message: string, rawResponse?: unknown) {
     super(message);
     this.name = 'AIValidationError';
+    this.rawResponse = rawResponse;
   }
 }
 
 export class AIProviderError extends Error {
-  constructor(
-    message: string,
-    public readonly providerName: string,
-    public readonly statusCode?: number,
-  ) {
+  providerName: string;
+  statusCode?: number;
+
+  constructor(message: string, providerName: string, statusCode?: number) {
     super(message);
     this.name = 'AIProviderError';
+    this.providerName = providerName;
+    this.statusCode = statusCode;
   }
 }
 
@@ -113,7 +115,7 @@ export class AIProviderError extends Error {
    Response Validation
    ══════════════════════════════════════════════════════════════ */
 
-const VALID_ITEM_TYPES = new Set(['活动', '餐饮', '体验', '休息', '交通']);
+const VALID_ITEM_TYPES = new Set(['活动', '餐饮', '休息', '交通', '住宿']);
 
 /**
  * 校验 AI 返回的行程数据。
@@ -178,10 +180,6 @@ export function validateTripResult(data: unknown): TripResult {
    Helpers
    ══════════════════════════════════════════════════════════════ */
 
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 /** 支持 AbortSignal 的 sleep — 被 abort 时抛出 AIAbortError */
 async function cancellableSleep(
   ms: number,
@@ -237,10 +235,9 @@ function createDemoProvider(): AIProvider {
         '../data/demo-itineraries'
       );
 
-      const key = personaKey(prefs);
-      const demo =
-        DEMO_ITINERARIES[prefs.destinationId]?.[key] ??
-        DEMO_ITINERARIES[prefs.destinationId]?.default;
+      const key = personaKey(prefs) as PersonaKey;
+      const destData = DEMO_ITINERARIES[prefs.destinationId];
+      const demo = destData?.[key] ?? destData?.default;
 
       if (!demo) {
         throw new AIProviderError(

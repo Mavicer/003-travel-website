@@ -6,6 +6,13 @@ const IMAGE_SRC = '/hero-fallback.jpg';
 
 const NAV_LINKS = ['JOURNEY', 'BENEFITS', 'JOURNAL', 'GUIDEBOOK'];
 
+function scrollToDestinations() {
+  const el = document.getElementById('destinations');
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 export default function Hero() {
   const bgContainerRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
@@ -98,23 +105,24 @@ export default function Hero() {
         {/* Center: Navigation */}
         <nav className="liquid-glass rounded-full px-2 py-2 flex items-center gap-1">
           {NAV_LINKS.map((link) => (
-            <a
+            <span
               key={link}
-              href={`#${link.toLowerCase()}`}
-              className="text-[11px] font-medium tracking-[0.12em] text-white/90 hover:text-white px-4 py-1.5 rounded-full transition-colors duration-200"
+              title="Coming soon"
+              className="text-[11px] font-medium tracking-[0.12em] text-white/40 px-4 py-1.5 rounded-full cursor-default select-none"
             >
               {link}
-            </a>
+            </span>
           ))}
         </nav>
 
         {/* Right: CTA */}
-        <a
-          href="#get-roaming"
-          className="liquid-glass rounded-full px-5 py-2.5 text-[11px] font-medium tracking-[0.12em] text-white/90 hover:text-white transition-colors duration-200"
+        <button
+          type="button"
+          onClick={scrollToDestinations}
+          className="liquid-glass rounded-full px-5 py-2.5 text-[11px] font-medium tracking-[0.12em] text-white/90 hover:text-white transition-colors duration-200 cursor-pointer"
         >
           GET ROAMING
-        </a>
+        </button>
       </header>
 
       {/* ── Hero Headline ──────────────────────────────────────── */}
@@ -173,6 +181,7 @@ export default function Hero() {
         {/* CTA Button */}
         <button
           type="button"
+          onClick={scrollToDestinations}
           className="bg-white text-black text-[15px] font-medium rounded-full px-8 py-3.5 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_32px_4px_rgba(255,255,255,0.2)] active:scale-[0.97]"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >

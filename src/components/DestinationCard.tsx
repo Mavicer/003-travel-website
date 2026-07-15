@@ -1,19 +1,14 @@
 import { useRef } from 'react';
 import gsap from 'gsap';
-
-export interface Destination {
-  image: string;
-  title: string;
-  subtitle: string;
-  description: string;
-}
+import type { Destination } from '../data/destinations';
 
 interface Props {
   destination: Destination;
   index: number;
+  onClick?: (destination: Destination) => void;
 }
 
-export default function DestinationCard({ destination, index }: Props) {
+export default function DestinationCard({ destination, index, onClick }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -65,6 +60,7 @@ export default function DestinationCard({ destination, index }: Props) {
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={() => onClick?.(destination)}
       className="group relative rounded-2xl overflow-hidden cursor-pointer"
       style={{
         background: 'rgba(255,255,255,0.03)',

@@ -116,7 +116,7 @@ export default function Hero() {
       <header className="absolute top-0 left-0 right-0 z-50 px-5 sm:px-8 md:px-10 py-4 sm:py-5 md:py-8 flex justify-between items-center">
         {/* Left: Wordmark */}
         <div className="text-[15px] sm:text-[16px] md:text-[17px] font-semibold tracking-tight text-white shrink-0">
-          Wanderful<sup className="text-[9px] sm:text-[10px]">TM</sup>
+          Mavicer<sup className="text-[9px] sm:text-[10px]">TM</sup>
         </div>
 
         {/* Center: Navigation (desktop only) */}

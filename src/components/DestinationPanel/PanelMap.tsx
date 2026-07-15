@@ -1,7 +1,7 @@
 import { useRef, useState, useCallback } from 'react';
 import Map, { Marker, NavigationControl } from 'react-map-gl/maplibre';
 import type { MapRef, MapLibreEvent } from 'react-map-gl/maplibre';
-import maplibregl from 'maplibre-gl';
+import * as maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { MapPin } from 'lucide-react';
 import type { Coordinates, Attraction } from '../../data/destinations';
@@ -18,28 +18,36 @@ interface Props {
 
 export { type Coordinates, type Attraction };
 
-/** Dark raster style — OSM tiles desaturated & darkened to match brand */
+/** Dark cinematic style — CartoDB light_all base + paint darkening.
+ *  {ratio} → @2x on Retina (512px PNG), empty on 1× (256px PNG). */
 export const DARK_STYLE = {
   version: 8,
   sources: {
     osm: {
       type: 'raster',
-      tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+      tiles: ['https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{ratio}.png'],
       tileSize: 256,
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     },
   },
   layers: [
+    // Solid dark background so unloaded/bare areas match the brand palette
+    {
+      id: 'bg',
+      type: 'background',
+      paint: { 'background-color': '#0a0a0f' },
+    },
     {
       id: 'osm-layer',
       type: 'raster',
       source: 'osm',
       paint: {
-        'raster-brightness-min': 0.04,
-        'raster-brightness-max': 0.65,
-        'raster-saturation': 0.12,
-        'raster-contrast': 1.5,
+        'raster-brightness-min': 0,
+        'raster-brightness-max': 0.7,
+        'raster-saturation': 0.5,
+        'raster-contrast': 0.5,
+        'raster-opacity': 0.9,
       },
     },
   ],

@@ -56,7 +56,7 @@ export default function PanelDestinationHero({ destination }: Props) {
       <div className="absolute inset-0 overflow-hidden">
         <img
           ref={imageRef}
-          src={destination.image.replace('w=600', 'w=1200')}
+          src={destination.image}
           alt={destination.title}
           className="absolute inset-0 w-full h-full object-cover"
         />

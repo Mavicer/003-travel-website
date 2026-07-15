@@ -96,7 +96,7 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'kyoto',
     image:
-      'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80&fit=crop',
+      '/destinations/kyoto.jpg',
     title: '京都',
     subtitle: '日本',
     description:
@@ -285,7 +285,7 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'santorini',
     image:
-      'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=600&q=80&fit=crop',
+      '/destinations/santorini.jpg',
     title: '圣托里尼',
     subtitle: '希腊',
     description:
@@ -465,7 +465,7 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'banff',
     image:
-      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&fit=crop',
+      '/destinations/banff.jpg',
     title: '班夫',
     subtitle: '加拿大',
     description:
@@ -645,7 +645,7 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'amalfi-coast',
     image:
-      'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=600&q=80&fit=crop',
+      '/destinations/amalfi-coast.jpg',
     title: '阿马尔菲海岸',
     subtitle: '意大利',
     description:
@@ -824,7 +824,7 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'bali',
     image:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80&fit=crop',
+      '/destinations/bali.jpg',
     title: '巴厘岛',
     subtitle: '印度尼西亚',
     description:
@@ -1004,7 +1004,7 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'patagonia',
     image:
-      'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=600&q=80&fit=crop',
+      '/destinations/patagonia.jpg',
     title: '巴塔哥尼亚',
     subtitle: '阿根廷',
     description:
@@ -1183,7 +1183,7 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'shanghai',
     image:
-      'https://images.unsplash.com/photo-1545893835-abaa50cbe628?w=600&q=80&fit=crop',
+      '/destinations/shanghai.jpg',
     title: '上海',
     subtitle: '中国',
     description:
@@ -1364,7 +1364,7 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'jiuzhaigou',
     image:
-      'https://images.unsplash.com/photo-1580137189272-c9379f8864fd?w=600&q=80&fit=crop',
+      '/destinations/jiuzhaigou.jpg',
     title: '九寨沟',
     subtitle: '中国',
     description:

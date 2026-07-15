@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import DestinationCard from './DestinationCard';
-import { DESTINATIONS, type Destination } from '../data/destinations';
+import { DESTINATIONS } from '../data/destinations';
 
 interface Props {
-  onCardClick?: (destination: Destination) => void;
+  onCardClick?: (id: string) => void;
 }
 
 export default function PopularDestinations({ onCardClick }: Props) {

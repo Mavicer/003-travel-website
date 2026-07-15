@@ -5,7 +5,7 @@ import type { Destination } from '../data/destinations';
 interface Props {
   destination: Destination;
   index: number;
-  onClick?: (destination: Destination) => void;
+  onClick?: (id: string) => void;
 }
 
 export default function DestinationCard({ destination, index, onClick }: Props) {
@@ -78,7 +78,7 @@ export default function DestinationCard({ destination, index, onClick }: Props) 
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={() => onClick?.(destination)}
+      onClick={() => onClick?.(destination.id)}
       className="group relative rounded-2xl overflow-hidden cursor-pointer"
       style={{
         background: 'rgba(255,255,255,0.03)',

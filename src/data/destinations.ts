@@ -9,49 +9,49 @@ export const DESTINATIONS: Destination[] = [
   {
     image:
       'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=600&q=80&fit=crop',
-    title: 'Santorini',
-    subtitle: 'Greece',
+    title: '圣托里尼',
+    subtitle: '希腊',
     description:
-      'Whitewashed cliffs meet the Aegean blue — sunsets that rewrite your definition of beauty.',
+      '白色悬崖坠入爱琴海的蔚蓝 — 这里的日落，将重新定义你对美的想象。',
   },
   {
     image:
       'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80&fit=crop',
-    title: 'Kyoto',
-    subtitle: 'Japan',
+    title: '京都',
+    subtitle: '日本',
     description:
-      'Temples wrapped in bamboo groves, where centuries of stillness meet cherry-blossom air.',
+      '竹林深处的古寺，百年的静谧，遇见樱吹雪的空气。',
   },
   {
     image:
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&fit=crop',
-    title: 'Banff',
-    subtitle: 'Canada',
+    title: '班夫',
+    subtitle: '加拿大',
     description:
-      'Turquoise lakes cradled by the Rockies — raw wilderness with a lodge-fire welcome.',
+      '落基山脉怀抱着蓝绿色的湖泊 — 原始荒野中，壁炉的温暖在等你。',
   },
   {
     image:
       'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=600&q=80&fit=crop',
-    title: 'Amalfi Coast',
-    subtitle: 'Italy',
+    title: '阿马尔菲海岸',
+    subtitle: '意大利',
     description:
-      'Cliffside villages spilling into the Mediterranean — lemon groves, terraced views, la dolce vita.',
+      '悬崖小镇倾泻入地中海 — 柠檬园、梯田风光、甜蜜生活。',
   },
   {
     image:
       'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80&fit=crop',
-    title: 'Bali',
-    subtitle: 'Indonesia',
+    title: '巴厘岛',
+    subtitle: '印度尼西亚',
     description:
-      'Emerald rice terraces and sacred temples — an island where spirit and nature move as one.',
+      '翠绿梯田与神圣庙宇 — 这座岛屿，灵性与自然同频共振。',
   },
   {
     image:
       'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=600&q=80&fit=crop',
-    title: 'Patagonia',
-    subtitle: 'Argentina',
+    title: '巴塔哥尼亚',
+    subtitle: '阿根廷',
     description:
-      'Jagged peaks above glacial fields — the edge of the world, and the start of something deeper.',
+      '锯齿般的山峰俯瞰着冰川 — 在世界尽头，发现内心深处的起点。',
   },
 ];

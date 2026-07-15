@@ -12,13 +12,15 @@ export default function DestinationCard({ destination, index, onClick }: Props) 
   const cardRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const discoverRef = useRef<HTMLSpanElement>(null);
 
   const handleMouseEnter = () => {
     if (!cardRef.current || !imgRef.current || !overlayRef.current) return;
     gsap.to(cardRef.current, {
       y: -8,
       scale: 1.02,
-      boxShadow: '0 0 0 1px rgba(255,255,255,0.15), 0 24px 48px rgba(0,0,0,0.6)',
+      boxShadow:
+        '0 0 0 1px rgba(200,136,75,0.35), 0 24px 48px rgba(0,0,0,0.6)',
       duration: 0.5,
       ease: 'power2.out',
     });
@@ -32,6 +34,14 @@ export default function DestinationCard({ destination, index, onClick }: Props) 
       duration: 0.5,
       ease: 'power2.out',
     });
+    if (discoverRef.current) {
+      gsap.to(discoverRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: 'power2.out',
+      });
+    }
   };
 
   const handleMouseLeave = () => {
@@ -53,6 +63,14 @@ export default function DestinationCard({ destination, index, onClick }: Props) 
       duration: 0.5,
       ease: 'power2.out',
     });
+    if (discoverRef.current) {
+      gsap.to(discoverRef.current, {
+        opacity: 0,
+        y: 6,
+        duration: 0.3,
+        ease: 'power2.in',
+      });
+    }
   };
 
   return (
@@ -90,11 +108,20 @@ export default function DestinationCard({ destination, index, onClick }: Props) 
         />
       </div>
 
+      {/* Discover affordance — fades in on hover */}
+      <span
+        ref={discoverRef}
+        className="absolute top-5 right-5 opacity-0 translate-y-1.5 text-[11px] font-medium tracking-[0.12em] text-white/90 pointer-events-none"
+        style={{ fontFamily: "'Inter', sans-serif" }}
+      >
+        探索 →
+      </span>
+
       {/* Text */}
       <div className="absolute bottom-0 left-0 right-0 p-6">
         <p
-          className="text-[11px] font-medium tracking-[0.14em] text-white/55 uppercase mb-1"
-          style={{ fontFamily: "'Inter', sans-serif" }}
+          className="text-[11px] font-medium tracking-[0.14em] uppercase mb-1"
+          style={{ fontFamily: "'Inter', sans-serif", color: '#C8884B' }}
         >
           {destination.subtitle}
         </p>
@@ -105,8 +132,8 @@ export default function DestinationCard({ destination, index, onClick }: Props) 
           {destination.title}
         </h3>
         <p
-          className="text-[13px] leading-relaxed text-white/60 m-0"
-          style={{ fontFamily: "'Barlow', sans-serif" }}
+          className="text-[13px] leading-relaxed m-0"
+          style={{ fontFamily: "'Barlow', sans-serif", color: 'rgba(255,255,255,0.6)' }}
         >
           {destination.description}
         </p>

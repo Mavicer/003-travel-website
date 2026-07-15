@@ -44,10 +44,10 @@ export default function PopularDestinations({ onCardClick }: Props) {
         {/* Section heading */}
         <div ref={headingRef} className="text-center pt-20 pb-16">
           <p
-            className="text-[11px] font-medium tracking-[0.18em] text-white/40 uppercase mb-4"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="text-[11px] font-medium tracking-[0.18em] uppercase mb-4"
+            style={{ fontFamily: "'Inter', sans-serif", color: '#C8884B' }}
           >
-            Curated for the curious
+            为探索者甄选
           </p>
           <h2
             className="text-white m-0"
@@ -59,7 +59,7 @@ export default function PopularDestinations({ onCardClick }: Props) {
               letterSpacing: '-0.02em',
             }}
           >
-            Popular Destinations
+            灵感目的地
           </h2>
         </div>
 

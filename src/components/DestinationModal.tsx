@@ -115,8 +115,8 @@ export default function DestinationModal({ destination, onClose }: Props) {
         {/* Content */}
         <div className="p-8">
           <p
-            className="text-[11px] font-medium tracking-[0.14em] text-white/40 uppercase mb-2"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="text-[11px] font-medium tracking-[0.14em] uppercase mb-2"
+            style={{ fontFamily: "'Inter', sans-serif", color: '#C8884B' }}
           >
             {destination.subtitle}
           </p>
@@ -140,10 +140,20 @@ export default function DestinationModal({ destination, onClose }: Props) {
           <button
             type="button"
             onClick={close}
-            className="mt-8 bg-white text-black text-[14px] font-medium rounded-full px-7 py-3 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_24px_2px_rgba(255,255,255,0.15)] active:scale-[0.97]"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="mt-8 bg-white text-black text-[14px] font-medium rounded-full px-7 py-3 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow =
+                '0 0 24px 2px rgba(200,136,75,0.25)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow =
+                '0 0 0 0 rgba(200,136,75,0)';
+            }}
           >
-            View full details →
+            查看完整详情 →
           </button>
         </div>
       </div>

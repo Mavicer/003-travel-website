@@ -2,6 +2,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import gsap from 'gsap';
 import { X } from 'lucide-react';
 import { DESTINATIONS } from '../../data/destinations';
+import PanelDestinationHero from './PanelDestinationHero';
 import PanelMap from './PanelMap';
 import PanelOverview from './PanelOverview';
 import PanelFooter from './PanelFooter';
@@ -17,46 +18,49 @@ export default function DestinationPanel({
   isOpen,
   onClose,
 }: Props) {
-  const overlayRef = useRef<HTMLDivElement>(null);
+  const blurRef = useRef<HTMLDivElement>(null);
+  const tintRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const destination = DESTINATIONS.find((d) => d.id === destinationId) ?? null;
 
   const close = useCallback(() => {
-    const overlay = overlayRef.current;
+    const blur = blurRef.current;
+    const tint = tintRef.current;
     const card = cardRef.current;
-    if (!overlay || !card) {
+    if (!blur || !tint || !card) {
       onClose();
       return;
     }
+
+    // Synchronized exit: card, tint, and blur all fade together
     gsap.to(card, {
       scale: 0.96,
       opacity: 0,
-      duration: 0.25,
+      duration: 0.28,
       ease: 'power2.in',
     });
-    gsap.to(overlay, {
+    gsap.to([tint, blur], {
       opacity: 0,
-      duration: 0.35,
+      duration: 0.28,
       ease: 'power2.in',
-      delay: 0.05,
       onComplete: onClose,
     });
   }, [onClose]);
 
-  // Animate in
+  // Animate in — only tint fades; blur stays static
   useEffect(() => {
-    if (!isOpen || !overlayRef.current || !cardRef.current) return;
+    if (!isOpen || !tintRef.current || !cardRef.current) return;
 
     if (scrollRef.current) {
       scrollRef.current.scrollTop = 0;
     }
 
-    gsap.set(overlayRef.current, { opacity: 0 });
+    gsap.set(tintRef.current, { opacity: 0 });
     gsap.set(cardRef.current, { opacity: 0, scale: 0.96, y: 16 });
 
-    gsap.to(overlayRef.current, {
+    gsap.to(tintRef.current, {
       opacity: 1,
       duration: 0.5,
       ease: 'power2.out',
@@ -85,18 +89,25 @@ export default function DestinationPanel({
 
   return (
     <div
-      ref={overlayRef}
       className="fixed inset-0 z-[100]"
       style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
     >
-      {/* ═══ Backdrop — blurs the original page underneath ═══ */}
+      {/* ═══ Backdrop blur — static full intensity on open, animated out on close ═══ */}
       <div
+        ref={blurRef}
+        className="absolute inset-0"
+        style={{
+          backdropFilter: 'blur(28px)',
+          WebkitBackdropFilter: 'blur(28px)',
+        }}
+      />
+      {/* ═══ Dark tint overlay — only this opacity animates ═══ */}
+      <div
+        ref={tintRef}
         className="absolute inset-0"
         onClick={close}
         style={{
           background: 'rgba(0,0,0,0.6)',
-          backdropFilter: 'blur(28px)',
-          WebkitBackdropFilter: 'blur(28px)',
         }}
       />
 
@@ -139,59 +150,8 @@ export default function DestinationPanel({
                 '0 4px 24px rgba(0,0,0,0.3), 0 25px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)',
             }}
           >
-            {/* ── Hero image ── */}
-            <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
-              <img
-                src={destination.image.replace('w=600', 'w=1200')}
-                alt={destination.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    'linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(10,10,12,0.82) 100%)',
-                }}
-              />
-            </div>
-
-            {/* ── Title block ── */}
-            <div className="px-6 sm:px-10 pb-8">
-              <p
-                className="text-[11px] font-medium tracking-[0.14em] uppercase mb-2"
-                style={{ fontFamily: "'Inter', sans-serif", color: '#C8884B' }}
-              >
-                {destination.subtitle}
-              </p>
-              <h1
-                className="text-white m-0 mb-3"
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 300,
-                  fontSize: 'clamp(28px, 3.5vw, 42px)',
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.03em',
-                }}
-              >
-                {destination.title}
-              </h1>
-              <div className="flex flex-wrap gap-2">
-                {destination.atmosphere.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[11px] font-medium tracking-[0.08em] px-3 py-1.5 rounded-full"
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      background: 'rgba(255,255,255,0.05)',
-                      color: 'rgba(255,255,255,0.65)',
-                      border: '1px solid rgba(255,255,255,0.08)',
-                    }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+            {/* ── Destination Hero Section ── */}
+            <PanelDestinationHero destination={destination} />
 
             {/* ── Overview Section ── */}
             <PanelOverview

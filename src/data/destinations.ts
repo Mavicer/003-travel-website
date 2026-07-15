@@ -1176,4 +1176,366 @@ export const DESTINATIONS: Destination[] = [
     aiTags: ['冰川', '雪山', '徒步', '荒野', '摄影', '极限运动', '马背'],
     aiTravelStyle: '极致荒野探险 — 适合硬核徒步爱好者、风光摄影师与冒险精神不灭的旅行者',
   },
+
+  // ══════════════════════════════════════════════════════════════
+  // 上海
+  // ══════════════════════════════════════════════════════════════
+  {
+    id: 'shanghai',
+    image:
+      'https://images.unsplash.com/photo-1545893835-abaa50cbe628?w=600&q=80&fit=crop',
+    title: '上海',
+    subtitle: '中国',
+    description:
+      '浦江两岸的百年繁华 — 梧桐深处是老上海的呢喃，摩天楼上是中国的新高度。',
+
+    coordinates: { lat: 31.2304, lng: 121.4737 },
+    mapViewport: { center: { lat: 31.2304, lng: 121.4737 }, zoom: 11, pitch: 40, bearing: 0 },
+
+    atmosphere: ['奢华', '文化', '温暖', '冒险'],
+
+    introduction: `上海，中国最具国际气息的都市，是近代中国开埠以来中西文化碰撞的前沿。外滩的万国建筑群在黄浦江边矗立百年，对岸的陆家嘴摩天楼群每天都在刷新天际线——这座城市同时活在1920年代的Art Deco与2020年代的未来主义里。
+
+    但上海不只有摩天大楼。梧桐树下的法租界，藏着这座城市最柔软的一面。清晨的弄堂里，阿姨们拎着竹篮去买菜，油条在锅里滋滋作响；午后的武康路咖啡馆，阳光透过法国梧桐洒在斑驳的红砖墙上；夜晚的外滩，老克勒们在和平饭店的爵士吧里随着萨克斯轻轻摇摆。上海的魔力正在于这种对比：最前卫的与最怀旧的、最国际的与最本地的——它们在同一座城市里和谐共存。
+
+    这是一座永不疲倦的城市。无论是米其林三星的分子料理还是弄堂口的葱油拌面，无论是K11的艺术展还是豫园的灯会，上海总有一种方式让你感受到它的脉搏。来这里不是为了看风景——而是为了感受一座城市可以有多大的可能性。`,
+
+    highlights: [
+      { icon: 'Building2', title: '外滩万国建筑群', description: '黄浦江畔的百年建筑博物馆，52幢风格各异的大楼讲述着上海的黄金年代' },
+      { icon: 'Landmark', title: '陆家嘴天际线', description: '上海中心、环球金融中心、金茂大厦——三座摩天楼定义了亚洲最具未来感的天际线' },
+      { icon: 'Coffee', title: '法租界梧桐街区', description: '武康路、安福路、五原路——在百年梧桐树下喝一杯精品咖啡，感受老上海的慢时光' },
+      { icon: 'Palette', title: '当代艺术先锋', description: '从西岸美术馆到PSA当代艺术博物馆，上海是中国当代艺术最活跃的阵地' },
+    ],
+
+    attractions: [
+      {
+        id: 'the-bund',
+        name: '外滩',
+        coordinates: { lat: 31.2400, lng: 121.4905 },
+        description: '黄浦江西岸1.5公里长的百年建筑群，被誉为"万国建筑博览"。夜晚灯光亮起时最为壮观，对岸陆家嘴的摩天楼群尽收眼底。',
+        category: '地标',
+        rating: 5,
+        bestTime: '傍晚至夜晚',
+      },
+      {
+        id: 'lujiazui',
+        name: '陆家嘴金融区',
+        coordinates: { lat: 31.2357, lng: 121.5012 },
+        description: '中国最具标志性的CBD天际线。上海中心大厦632米，是中国第一高楼，118层观光厅可360度俯瞰整座城市。',
+        category: '观景点',
+        rating: 5,
+        bestTime: '下午至日落时分',
+      },
+      {
+        id: 'yu-garden',
+        name: '豫园',
+        coordinates: { lat: 31.2272, lng: 121.4926 },
+        description: '建于明代的江南古典园林，假山、水池、亭台、回廊——在摩天楼的环绕下，守护着上海最后的明代雅韵。',
+        category: '地标',
+        rating: 5,
+        bestTime: '上午 9:00-11:00',
+      },
+      {
+        id: 'french-concession',
+        name: '法租界',
+        coordinates: { lat: 31.2093, lng: 121.4460 },
+        description: '梧桐树覆盖的静谧街区，百年老洋房散落其间。武康大楼、巴金故居、各式独立咖啡馆与买手店——这里是上海最文艺的角落。',
+        category: '观景点',
+        rating: 5,
+        bestTime: '午后至傍晚',
+      },
+      {
+        id: 'west-bund',
+        name: '西岸艺术区',
+        coordinates: { lat: 31.1667, lng: 121.4575 },
+        description: '黄浦江西岸的滨江艺术走廊，聚集了龙美术馆、余德耀美术馆、西岸美术馆等众多国际级艺术机构。',
+        category: '博物馆',
+        rating: 4,
+        bestTime: '下午',
+      },
+      {
+        id: 'xintiandi',
+        name: '新天地',
+        coordinates: { lat: 31.2195, lng: 121.4745 },
+        description: '石库门老建筑改造而成的时尚街区，传统里弄与现代商业的完美融合。精品餐厅、酒吧、设计师店铺林立。',
+        category: '美食',
+        rating: 4,
+        bestTime: '傍晚至夜间',
+      },
+    ],
+
+    experiences: [
+      {
+        id: 'bund-walk',
+        title: '外滩晨跑或夜行',
+        description: '沿黄浦江步道慢跑或散步，一侧是百年万国建筑，一侧是未来主义摩天楼——这是上海最经典的体验。',
+        category: '文化',
+        duration: '1 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'dim-sum-tour',
+        title: '老城厢点心之旅',
+        description: '跟随美食向导探访城隍庙与老西门的老字号，品尝小笼包、生煎、葱油拌面、蟹壳黄等地道上海味道。',
+        category: '美食',
+        duration: '3 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'french-concession-bike',
+        title: '梧桐区单车漫游',
+        description: '骑共享单车穿行于法租界的梧桐林荫道，在武康路、安福路、五原路的咖啡馆、书店与画廊间随心停留。',
+        category: '文化',
+        duration: '半天',
+        difficulty: '轻松',
+      },
+      {
+        id: 'huangpu-river-cruise',
+        title: '黄浦江夜游',
+        description: '乘游船在黄浦江上欣赏两岸灯火。外滩的古典与陆家嘴的未来在夜色中同框——上海最美的45分钟。',
+        category: '夜生活',
+        duration: '45 分钟',
+        difficulty: '轻松',
+      },
+    ],
+
+    itinerary: [
+      {
+        day: 1,
+        title: '外滩与老城厢',
+        items: [
+          { time: '09:00', title: '外滩漫步', description: '从外白渡桥出发，沿黄浦江西岸向南漫步，逐一欣赏万国建筑群', attractionId: 'the-bund', type: '活动' },
+          { time: '11:00', title: '豫园', description: '探访上海保存最完好的明代园林，在九曲桥上喂锦鲤', attractionId: 'yu-garden', type: '活动' },
+          { time: '12:30', title: '南翔馒头店', description: '在豫园内的百年老店品尝正宗南翔小笼包', type: '餐饮' },
+          { time: '14:30', title: '上海博物馆', description: '在人民广场参观中国古代艺术精品，青铜器与陶瓷收藏世界一流', type: '活动' },
+          { time: '17:00', title: '新天地', description: '在石库门建筑群中寻找一家露台餐厅，享受傍晚的 aperitif', attractionId: 'xintiandi', type: '活动' },
+          { time: '19:30', title: '新天地晚餐', description: '在新天地的精品餐厅品尝融合上海菜，感受老建筑里的新生活', type: '餐饮' },
+        ],
+      },
+      {
+        day: 2,
+        title: '梧桐区与当代上海',
+        items: [
+          { time: '09:30', title: '法租界单车漫游', description: '从武康大楼出发，骑车穿行于梧桐树下的文艺街区', attractionId: 'french-concession', type: '活动' },
+          { time: '11:30', title: '安福路Brunch', description: '在安福路的网红咖啡馆享受悠闲的早午餐', type: '餐饮' },
+          { time: '13:30', title: '西岸美术馆', description: '在黄浦江畔的世界级美术馆中感受中国当代艺术的脉搏', attractionId: 'west-bund', type: '活动' },
+          { time: '16:00', title: '陆家嘴登高', description: '登上海中心118层观光厅，在云端俯瞰上海全景', attractionId: 'lujiazui', type: '活动' },
+          { time: '18:30', title: '黄浦江夜游', description: '乘船在黄浦江上看两岸灯火交相辉映', type: '活动' },
+          { time: '20:00', title: '外滩晚餐', description: '在外滩的江景餐厅享用以东方美学呈现的创新料理', type: '餐饮' },
+        ],
+      },
+      {
+        day: 3,
+        title: '弄堂与日常',
+        items: [
+          { time: '08:00', title: '弄堂早餐', description: '在静安寺附近的弄堂里寻找老上海早餐——咸豆浆、粢饭团、油条', type: '餐饮' },
+          { time: '10:00', title: 'M50创意园', description: '在莫干山路的旧工厂改造艺术区中探索画廊与艺术家工作室', type: '活动' },
+          { time: '12:30', title: '本帮菜午餐', description: '在老字号品尝红烧肉、油爆虾、腌笃鲜等经典上海本帮菜', type: '餐饮' },
+          { time: '14:30', title: '田子坊', description: '穿行于泰康路的弄堂迷宫，在手作小店与创意工坊中淘宝', type: '活动' },
+          { time: '17:00', title: '思南公馆下午茶', description: '在百年花园洋房中享受老上海的优雅下午茶时光', type: '休息' },
+          { time: '19:30', title: '告别晚餐', description: '在法租界的隐秘小馆，以一顿精致的fusion料理为上海之旅画上句号', type: '餐饮' },
+        ],
+      },
+    ],
+
+    seasons: [
+      { season: '春', months: '3月-5月', description: '梧桐抽新芽，气温宜人，是最适合在法租界散步的季节', temperature: '10°C - 22°C', rating: 5 },
+      { season: '夏', months: '6月-8月', description: '炎热潮湿但有最好的夜生活，外滩夜风与露台酒吧是夏日专属', temperature: '25°C - 36°C', rating: 3 },
+      { season: '秋', months: '9月-11月', description: '梧桐叶金黄，天气最舒适，是上海最美的季节。大闸蟹上市，美食爱好者不容错过', temperature: '15°C - 25°C', rating: 5 },
+      { season: '冬', months: '12月-2月', description: '湿冷但圣诞与新年的上海分外浪漫，各大商场节日装饰璀璨', temperature: '2°C - 10°C', rating: 3 },
+    ],
+
+    practicalInfo: {
+      language: '普通话、上海话，旅游区英语通用',
+      currency: '人民币 (CNY)',
+      timezone: 'UTC+8 (东八区)',
+      visa: '无需签证（国内目的地）',
+      bestSeason: '3月-5月, 9月-11月',
+      averageCost: '¥500-1,500/天 (不含往返交通)',
+    },
+
+    aiTags: ['都市', '美食', '建筑', '夜景', '艺术', '摄影', '购物'],
+    aiTravelStyle: '现代都市深度游 — 适合城市探索者、美食爱好者、艺术迷与建筑摄影玩家',
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // 九寨沟
+  // ══════════════════════════════════════════════════════════════
+  {
+    id: 'jiuzhaigou',
+    image:
+      'https://images.unsplash.com/photo-1580137189272-c9379f8864fd?w=600&q=80&fit=crop',
+    title: '九寨沟',
+    subtitle: '中国',
+    description:
+      '碧蓝海子倒映着雪峰与彩林 — 大自然在这里打翻了调色盘，每一眼都是不可复制的绝色。',
+
+    coordinates: { lat: 33.2631, lng: 103.9186 },
+    mapViewport: { center: { lat: 33.2631, lng: 103.9186 }, zoom: 12, pitch: 45, bearing: -20 },
+
+    atmosphere: ['宁静', '野性', '冒险', '文化'],
+
+    introduction: `九寨沟，位于四川省阿坝藏族羌族自治州，是中国最负盛名的自然景观之一，被联合国教科文组织列为世界自然遗产。这里的核心魅力来自118个高山湖泊——"海子"——每一个都呈现出令人难以置信的蓝绿色调。五花海、镜海、熊猫海、箭竹海……每一个名字后面都是一幅绝美的画卷。
+
+    九寨沟的水是有灵魂的。湖水清澈到可以看到十几米深处横卧的古木，而水中丰富的矿物质与藻类在阳光折射下呈现出翡翠、宝蓝、碧绿、靛青——这些颜色鲜艳得让人觉得不真实。秋天的九寨沟更是人间仙境：五彩斑斓的枫叶与桦林倒映在碧蓝的海子中，远处的雪峰在蓝天白云下熠熠生辉——这里的秋天，让所有滤镜都显得多余。
+
+    除了自然奇观，九寨沟周边还保留了浓郁的藏族文化。扎如寺的转经筒、藏家的青稞酒与酥油茶、热情奔放的锅庄舞——在这片净土上，大自然与人文和谐共生，每一个来访者都能找到内心的宁静。`,
+
+    highlights: [
+      { icon: 'Droplets', title: '五花海', description: '九寨沟的明信片级景观，湖水呈现五种颜色，清澈见底，古木横卧水底如同水下森林' },
+      { icon: 'Waves', title: '诺日朗瀑布', description: '中国最宽的钙华瀑布，270米宽的白色水幕从翠绿的树丛间倾泻而下' },
+      { icon: 'Mountain', title: '原始森林', description: '在海拔3000米的针叶林中徒步，松萝垂挂，空气清冽，偶遇松鼠与蓝马鸡' },
+      { icon: 'Church', title: '扎如寺', description: '本教寺庙，转经筒与经幡在雪山背景下诉说着千年的藏地信仰' },
+    ],
+
+    attractions: [
+      {
+        id: 'five-flower-lake',
+        name: '五花海',
+        coordinates: { lat: 33.2197, lng: 103.8954 },
+        description: '九寨沟最上镜的海子，因湖水深浅与沉积物不同而呈现鹅黄、墨绿、深蓝、宝蓝等色彩。水底的古木清晰可见。',
+        category: '自然',
+        rating: 5,
+        bestTime: '上午 9:00-11:00（阳光直射湖面时色彩最丰富）',
+      },
+      {
+        id: 'nuorilang-falls',
+        name: '诺日朗瀑布',
+        coordinates: { lat: 33.1856, lng: 103.8892 },
+        description: '宽270米、落差24.5米的钙华瀑布，是中国最宽的瀑布。藏语意为"雄伟壮观"，秋季红叶映衬时尤为壮美。',
+        category: '自然',
+        rating: 5,
+        bestTime: '上午至午后',
+      },
+      {
+        id: 'mirror-lake',
+        name: '镜海',
+        coordinates: { lat: 33.2018, lng: 103.8934 },
+        description: '水面如镜，完美倒映周围的雪山、森林与蓝天。清晨无风时最为震撼，倒影与实景难以分辨。',
+        category: '自然',
+        rating: 5,
+        bestTime: '清晨 7:00-8:30（无风时）',
+      },
+      {
+        id: 'primeval-forest',
+        name: '原始森林',
+        coordinates: { lat: 33.2402, lng: 103.9088 },
+        description: '日则沟顶端的原始针叶林，松萝挂满枝头，空气中负氧离子含量极高。林间步道适合缓行冥想。',
+        category: '自然',
+        rating: 4,
+        bestTime: '上午',
+      },
+      {
+        id: 'shuzheng-waterfalls',
+        name: '树正瀑布群',
+        coordinates: { lat: 33.2087, lng: 103.8991 },
+        description: '由数十个钙华瀑布组成的瀑布群，水流在树丛间穿行而下。秋叶季节色彩最为丰富。',
+        category: '自然',
+        rating: 5,
+        bestTime: '全天',
+      },
+      {
+        id: 'zarhu-temple',
+        name: '扎如寺',
+        coordinates: { lat: 33.2520, lng: 103.9110 },
+        description: '始建于13世纪的本教寺庙，是九寨沟藏族文化的核心。转经筒、风马旗、酥油灯——在这里感受最纯粹的藏地信仰。',
+        category: '寺庙',
+        rating: 4,
+        bestTime: '上午',
+      },
+    ],
+
+    experiences: [
+      {
+        id: 'jiuzhai-hiking',
+        title: '海子徒步穿越',
+        description: '从五花海到诺日朗瀑布的徒步线，沿途经过多个绝美海子。秋天的彩林倒映在碧蓝湖水中，每一步都是风景。',
+        category: '自然',
+        duration: '4-5 小时',
+        difficulty: '适中',
+      },
+      {
+        id: 'tibetan-cuisine',
+        title: '藏家晚餐体验',
+        description: '在当地藏民家中品尝青稞酒、酥油茶、牦牛肉与糌粑。围着火炉听藏族老人讲述格萨尔王的故事。',
+        category: '文化',
+        duration: '2 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'photography-tour',
+        title: '日出摄影之旅',
+        description: '清晨在专业摄影向导的带领下前往最佳机位，在游客到来之前捕获九寨沟最纯净的晨光。',
+        category: '自然',
+        duration: '3 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'guozhuang-dance',
+        title: '锅庄舞之夜',
+        description: '在藏寨广场与当地人一起围着篝火跳锅庄舞。不需要会跳——这里欢迎每一个愿意加入的人。',
+        category: '文化',
+        duration: '1.5 小时',
+        difficulty: '轻松',
+      },
+    ],
+
+    itinerary: [
+      {
+        day: 1,
+        title: '日则沟精华',
+        items: [
+          { time: '07:00', title: '镜海晨光', description: '清晨无风时抵达镜海，拍摄完美的雪山森林倒影', attractionId: 'mirror-lake', type: '活动' },
+          { time: '09:00', title: '五花海', description: '在阳光直射湖面时欣赏传说中的五色湖水', attractionId: 'five-flower-lake', type: '活动' },
+          { time: '11:00', title: '原始森林徒步', description: '沿日则沟栈道深入原始针叶林，呼吸最纯净的空气', attractionId: 'primeval-forest', type: '活动' },
+          { time: '12:30', title: '诺日朗餐厅', description: '在景区内的诺日朗游客中心品尝川味简餐', type: '餐饮' },
+          { time: '14:00', title: '诺日朗瀑布', description: '站在270米宽的瀑布前感受水雾扑面', attractionId: 'nuorilang-falls', type: '活动' },
+          { time: '18:00', title: '藏家晚餐', description: '在沟口的藏家乐品尝牦牛肉火锅与青稞酒', type: '餐饮' },
+        ],
+      },
+      {
+        day: 2,
+        title: '树正沟与藏族文化',
+        items: [
+          { time: '07:30', title: '树正瀑布群', description: '晨光中欣赏数十个钙华瀑布在丛林间奔流', attractionId: 'shuzheng-waterfalls', type: '活动' },
+          { time: '10:00', title: '树正群海', description: '沿栈道穿行于大小不一的海子之间，每一个都如宝石般碧蓝', type: '活动' },
+          { time: '12:00', title: '藏式午餐', description: '在树正寨品尝酥油茶、青稞饼与牦牛酸奶', type: '餐饮' },
+          { time: '14:00', title: '扎如寺', description: '参访千年本教寺庙，转动经筒，悬挂经幡祈福', attractionId: 'zarhu-temple', type: '活动' },
+          { time: '16:30', title: '藏寨探访', description: '走进当地藏民的家，了解九寨沟人的日常生活与传统文化', type: '活动' },
+          { time: '19:00', title: '锅庄舞之夜', description: '与藏族同胞一起围着篝火跳锅庄舞，结束充实的一天', type: '活动' },
+        ],
+      },
+      {
+        day: 3,
+        title: '深度探索与告别',
+        items: [
+          { time: '06:30', title: '日出摄影', description: '在专业向导带领下前往最佳机位，捕捉九寨沟清晨的第一缕光', type: '活动' },
+          { time: '09:00', title: '熊猫海与箭竹海', description: '探访日则沟的第一对姐妹海子，在少有人至的清晨独享宁静', type: '活动' },
+          { time: '12:00', title: '告别午餐', description: '在沟口的川菜馆品尝水煮牦牛肉与松茸炖鸡', type: '餐饮' },
+          { time: '14:00', title: '九寨天堂温泉', description: '在雪山环抱的温泉中舒缓两天的疲惫——这是九寨沟给你的最后礼物', type: '休息' },
+          { time: '17:00', title: '沟口纪念品', description: '购买藏族手工唐卡、牦牛毛围巾与松茸干货作为伴手礼', type: '活动' },
+          { time: '19:00', title: '告别晚餐', description: '以一顿丰盛的川西料理为九寨沟之旅画上完美的句号', type: '餐饮' },
+        ],
+      },
+    ],
+
+    seasons: [
+      { season: '春', months: '4月-5月', description: '冰雪消融，山花初绽，瀑布水量大增，游客尚少', temperature: '5°C - 18°C', rating: 4 },
+      { season: '夏', months: '6月-8月', description: '绿意盎然，是避暑好去处。但正值雨季，偶有降雨影响能见度', temperature: '14°C - 26°C', rating: 3 },
+      { season: '秋', months: '9月-11月', description: '九寨沟的黄金季节。彩林如火，碧水如镜，每一天都是一幅画', temperature: '3°C - 18°C', rating: 5 },
+      { season: '冬', months: '12月-3月', description: '冰封瀑布、雪覆松林。蓝冰与白雪的九寨沟有一种纯粹的静谧之美', temperature: '-8°C - 5°C', rating: 4 },
+    ],
+
+    practicalInfo: {
+      language: '普通话、藏语，旅游区普通话通用',
+      currency: '人民币 (CNY)',
+      timezone: 'UTC+8 (东八区)',
+      visa: '无需签证（国内目的地）',
+      bestSeason: '9月-11月',
+      averageCost: '¥400-1,200/天 (不含往返交通)',
+    },
+
+    aiTags: ['湖泊', '森林', '摄影', '徒步', '自然', '藏族文化', '瀑布'],
+    aiTravelStyle: '极致自然探索 — 适合风光摄影师、徒步爱好者与自然疗愈追寻者',
+  },
 ];

@@ -210,11 +210,32 @@ import { Trees, MapPin, Star, Clock, ChevronRight } from 'lucide-react';
 /* ── Attractions ── */
 function AttractionsSection({ attractions }: { attractions: Attraction[] }) {
   const ref = useRef<HTMLDivElement>(null);
-  useFadeIn(ref);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const items = el.querySelectorAll<HTMLElement>('[data-animate]');
+          gsap.fromTo(
+            items,
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out', stagger: 0.06 },
+          );
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.08 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div ref={ref} className="px-6 sm:px-10 py-10 sm:py-12">
       <p
+        data-animate
         className="text-[11px] font-medium tracking-[0.14em] uppercase mb-6"
         style={{ fontFamily: "'Inter', sans-serif", color: '#C8884B' }}
       >
@@ -224,34 +245,40 @@ function AttractionsSection({ attractions }: { attractions: Attraction[] }) {
         {attractions.map((a) => (
           <div
             key={a.id}
-            className="flex gap-4 p-4 rounded-xl transition-colors"
+            data-animate
+            className="relative flex gap-4 p-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
             style={{
               background: 'rgba(255,255,255,0.015)',
               border: '1px solid rgba(255,255,255,0.04)',
             }}
           >
+            {/* Left accent bar — fades in on hover */}
             <div
-              className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center mt-0.5"
-              style={{ background: 'rgba(200,136,75,0.1)' }}
+              className="absolute left-0 top-3 bottom-3 w-0.5 rounded-full opacity-0 transition-opacity duration-300"
+              style={{ background: '#C8884B' }}
+            />
+            <div
+              className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center mt-0.5"
+              style={{ background: 'rgba(200,136,75,0.12)' }}
             >
-              <MapPin size={15} strokeWidth={1.5} style={{ color: '#C8884B' }} />
+              <MapPin size={16} strokeWidth={1.5} style={{ color: '#C8884B' }} />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
                 <h4
-                  className="text-[14px] font-medium text-white/85 m-0"
+                  className="text-[14px] font-medium text-white/90 m-0"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {a.name}
                 </h4>
                 {a.rating && (
-                  <span className="text-[11px]" style={{ color: '#C8884B' }}>
-                    {'★'.repeat(a.rating)}
+                  <span className="text-[11px] tracking-[0.05em]" style={{ color: '#C8884B' }}>
+                    {'★'.repeat(a.rating)}{'★'.repeat(5 - a.rating).replace(/★/g, '☆')}
                   </span>
                 )}
               </div>
               <p
-                className="text-[13px] leading-relaxed text-white/50 m-0 mb-1.5"
+                className="text-[13px] leading-relaxed text-white/55 m-0 mb-1.5"
                 style={{ fontFamily: "'Barlow', sans-serif" }}
               >
                 {a.description}
@@ -269,7 +296,7 @@ function AttractionsSection({ attractions }: { attractions: Attraction[] }) {
                 </span>
                 {a.bestTime && (
                   <span
-                    className="text-[11px] text-white/35 flex items-center gap-1"
+                    className="text-[11px] text-white/45 flex items-center gap-1"
                     style={{ fontFamily: "'Barlow', sans-serif" }}
                   >
                     <Clock size={10} strokeWidth={1.5} />
@@ -288,7 +315,27 @@ function AttractionsSection({ attractions }: { attractions: Attraction[] }) {
 /* ── Experiences ── */
 function ExperiencesSection({ experiences }: { experiences: Experience[] }) {
   const ref = useRef<HTMLDivElement>(null);
-  useFadeIn(ref);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const items = el.querySelectorAll<HTMLElement>('[data-animate]');
+          gsap.fromTo(
+            items,
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out', stagger: 0.06 },
+          );
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.08 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const categoryColor = (cat: Experience['category']) => {
     const map: Record<string, string> = {
@@ -305,6 +352,7 @@ function ExperiencesSection({ experiences }: { experiences: Experience[] }) {
   return (
     <div ref={ref} className="px-6 sm:px-10 py-10 sm:py-12">
       <p
+        data-animate
         className="text-[11px] font-medium tracking-[0.14em] uppercase mb-6"
         style={{ fontFamily: "'Inter', sans-serif", color: '#C8884B' }}
       >
@@ -314,12 +362,18 @@ function ExperiencesSection({ experiences }: { experiences: Experience[] }) {
         {experiences.map((exp) => (
           <div
             key={exp.id}
-            className="p-5 rounded-xl"
+            data-animate
+            className="relative p-5 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
             style={{
               background: 'rgba(255,255,255,0.015)',
               border: '1px solid rgba(255,255,255,0.04)',
             }}
           >
+            {/* Left accent bar — category color, fades in on hover */}
+            <div
+              className="absolute left-0 top-3 bottom-3 w-0.5 rounded-full opacity-0 transition-opacity duration-300"
+              style={{ background: categoryColor(exp.category) }}
+            />
             <div className="flex items-center gap-2 mb-2">
               <span
                 className="text-[10px] font-medium px-2 py-0.5 rounded-full"
@@ -333,7 +387,7 @@ function ExperiencesSection({ experiences }: { experiences: Experience[] }) {
               </span>
               {exp.duration && (
                 <span
-                  className="text-[10px] text-white/30"
+                  className="text-[10px] text-white/35"
                   style={{ fontFamily: "'Barlow', sans-serif" }}
                 >
                   {exp.duration}
@@ -341,7 +395,7 @@ function ExperiencesSection({ experiences }: { experiences: Experience[] }) {
               )}
               {exp.difficulty && (
                 <span
-                  className="text-[10px] text-white/30"
+                  className="text-[10px] text-white/35"
                   style={{ fontFamily: "'Barlow', sans-serif" }}
                 >
                   {exp.difficulty}
@@ -349,13 +403,13 @@ function ExperiencesSection({ experiences }: { experiences: Experience[] }) {
               )}
             </div>
             <h4
-              className="text-[14px] font-medium text-white/85 m-0 mb-1.5"
+              className="text-[14px] font-medium text-white/90 m-0 mb-1.5"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {exp.title}
             </h4>
             <p
-              className="text-[13px] leading-relaxed text-white/45 m-0"
+              className="text-[13px] leading-relaxed text-white/55 m-0"
               style={{ fontFamily: "'Barlow', sans-serif" }}
             >
               {exp.description}
@@ -370,32 +424,53 @@ function ExperiencesSection({ experiences }: { experiences: Experience[] }) {
 /* ── Itinerary ── */
 function ItinerarySection({ itinerary }: { itinerary: ItineraryDay[] }) {
   const ref = useRef<HTMLDivElement>(null);
-  useFadeIn(ref);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const items = el.querySelectorAll<HTMLElement>('[data-animate]');
+          gsap.fromTo(
+            items,
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out', stagger: 0.1 },
+          );
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.08 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div ref={ref} className="px-6 sm:px-10 py-10 sm:py-12">
       <p
+        data-animate
         className="text-[11px] font-medium tracking-[0.14em] uppercase mb-6"
         style={{ fontFamily: "'Inter', sans-serif", color: '#C8884B' }}
       >
         推荐行程
       </p>
-      <div className="space-y-6">
+      <div className="space-y-8">
         {itinerary.map((day) => (
-          <div key={day.day}>
-            <div className="flex items-center gap-3 mb-3">
+          <div key={day.day} data-animate>
+            <div className="flex items-center gap-3 mb-4">
               <span
                 className="text-[11px] font-medium px-2.5 py-1 rounded-full"
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  background: 'rgba(200,136,75,0.1)',
+                  background: 'rgba(200,136,75,0.12)',
                   color: '#C8884B',
                 }}
               >
                 第{day.day}天
               </span>
               <span
-                className="text-[13px] font-medium text-white/70"
+                className="text-[13px] font-medium text-white/75"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {day.title}
@@ -403,17 +478,17 @@ function ItinerarySection({ itinerary }: { itinerary: ItineraryDay[] }) {
             </div>
             <div
               className="relative pl-5"
-              style={{ borderLeft: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ borderLeft: '1px solid rgba(255,255,255,0.08)' }}
             >
               {day.items.map((item, i) => (
                 <div
                   key={i}
-                  className="relative pb-4 last:pb-0"
+                  className="relative pb-5 last:pb-0"
                   style={{ paddingLeft: '16px' }}
                 >
-                  {/* Timeline dot */}
+                  {/* Timeline dot — subtle pulse on the last/active item */}
                   <div
-                    className="absolute left-[-22px] top-1.5 w-2 h-2 rounded-full"
+                    className="absolute left-[-23px] top-1.5 w-2.5 h-2.5 rounded-full"
                     style={{
                       background:
                         item.type === '餐饮'
@@ -422,24 +497,34 @@ function ItinerarySection({ itinerary }: { itinerary: ItineraryDay[] }) {
                           ? '#7B9FC8'
                           : '#C8884B',
                       border: '2px solid rgba(0,0,0,0.78)',
+                      boxShadow:
+                        i === 0
+                          ? `0 0 6px ${
+                              item.type === '餐饮'
+                                ? 'rgba(224,123,90,0.3)'
+                                : item.type === '交通'
+                                ? 'rgba(123,159,200,0.3)'
+                                : 'rgba(200,136,75,0.3)'
+                            }`
+                          : 'none',
                     }}
                   />
-                  <div className="flex items-center gap-2 mb-0.5">
+                  <div className="flex items-center gap-2 mb-1">
                     <span
-                      className="text-[10px] font-medium text-white/30"
+                      className="text-[10px] font-medium text-white/35"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
                       {item.time}
                     </span>
                     <span
-                      className="text-[13px] font-medium text-white/80"
+                      className="text-[13px] font-medium text-white/85"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
                       {item.title}
                     </span>
                   </div>
                   <p
-                    className="text-[12px] leading-relaxed text-white/40 m-0"
+                    className="text-[12px] leading-relaxed text-white/45 m-0"
                     style={{ fontFamily: "'Barlow', sans-serif" }}
                   >
                     {item.description}
@@ -457,7 +542,27 @@ function ItinerarySection({ itinerary }: { itinerary: ItineraryDay[] }) {
 /* ── Seasons ── */
 function SeasonsSection({ seasons }: { seasons: SeasonInfo[] }) {
   const ref = useRef<HTMLDivElement>(null);
-  useFadeIn(ref);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const items = el.querySelectorAll<HTMLElement>('[data-animate]');
+          gsap.fromTo(
+            items,
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out', stagger: 0.06 },
+          );
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.08 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const seasonIcon = (s: SeasonInfo['season']) => {
     const map: Record<string, string> = { '春': '🌸', '夏': '☀️', '秋': '🍁', '冬': '❄️' };
@@ -467,6 +572,7 @@ function SeasonsSection({ seasons }: { seasons: SeasonInfo[] }) {
   return (
     <div ref={ref} className="px-6 sm:px-10 py-10 sm:py-12">
       <p
+        data-animate
         className="text-[11px] font-medium tracking-[0.14em] uppercase mb-6"
         style={{ fontFamily: "'Inter', sans-serif", color: '#C8884B' }}
       >
@@ -476,21 +582,25 @@ function SeasonsSection({ seasons }: { seasons: SeasonInfo[] }) {
         {seasons.map((s) => (
           <div
             key={s.season}
-            className="p-4 rounded-xl text-center"
+            data-animate
+            className="p-4 rounded-xl text-center transition-all duration-300 hover:-translate-y-0.5"
             style={{
-              background: 'rgba(255,255,255,0.015)',
-              border: '1px solid rgba(255,255,255,0.04)',
+              background: s.rating === 5 ? 'rgba(200,136,75,0.06)' : 'rgba(255,255,255,0.015)',
+              border:
+                s.rating === 5
+                  ? '1px solid rgba(200,136,75,0.18)'
+                  : '1px solid rgba(255,255,255,0.04)',
             }}
           >
             <div className="text-xl mb-1">{seasonIcon(s.season)}</div>
             <div
-              className="text-[13px] font-medium text-white/80 mb-0.5"
+              className="text-[13px] font-medium text-white/85 mb-0.5"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {s.season}
             </div>
             <div
-              className="text-[10px] text-white/35 mb-1.5"
+              className="text-[10px] text-white/40 mb-1.5"
               style={{ fontFamily: "'Barlow', sans-serif" }}
             >
               {s.months}
@@ -507,7 +617,7 @@ function SeasonsSection({ seasons }: { seasons: SeasonInfo[] }) {
               ))}
             </div>
             <div
-              className="text-[11px] text-white/40 leading-relaxed"
+              className="text-[11px] text-white/45 leading-relaxed"
               style={{ fontFamily: "'Barlow', sans-serif" }}
             >
               {s.temperature}
@@ -522,7 +632,27 @@ function SeasonsSection({ seasons }: { seasons: SeasonInfo[] }) {
 /* ── Practical Info ── */
 function PracticalSection({ info }: { info: PracticalInfo }) {
   const ref = useRef<HTMLDivElement>(null);
-  useFadeIn(ref);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const items = el.querySelectorAll<HTMLElement>('[data-animate]');
+          gsap.fromTo(
+            items,
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out', stagger: 0.06 },
+          );
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.08 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const items = [
     { label: '语言', value: info.language },
@@ -538,6 +668,7 @@ function PracticalSection({ info }: { info: PracticalInfo }) {
   return (
     <div ref={ref} className="px-6 sm:px-10 py-10 sm:py-12">
       <p
+        data-animate
         className="text-[11px] font-medium tracking-[0.14em] uppercase mb-6"
         style={{ fontFamily: "'Inter', sans-serif", color: '#C8884B' }}
       >
@@ -549,20 +680,21 @@ function PracticalSection({ info }: { info: PracticalInfo }) {
           .map((item) => (
             <div
               key={item.label}
-              className="p-4 rounded-xl"
+              data-animate
+              className="p-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
               style={{
                 background: 'rgba(255,255,255,0.015)',
                 border: '1px solid rgba(255,255,255,0.04)',
               }}
             >
               <div
-                className="text-[10px] text-white/35 mb-1 tracking-wider uppercase"
+                className="text-[10px] text-white/40 mb-1 tracking-wider uppercase"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {item.label}
               </div>
               <div
-                className="text-[13px] text-white/70 leading-snug"
+                className="text-[13px] text-white/75 leading-snug"
                 style={{ fontFamily: "'Barlow', sans-serif" }}
               >
                 {item.value}
@@ -574,27 +706,3 @@ function PracticalSection({ info }: { info: PracticalInfo }) {
   );
 }
 
-/* ── Shared IntersectionObserver fade-in hook ── */
-function useFadeIn(ref: React.RefObject<HTMLDivElement | null>) {
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          gsap.fromTo(
-            el,
-            { opacity: 0, y: 24 },
-            { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
-          );
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1 },
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-}

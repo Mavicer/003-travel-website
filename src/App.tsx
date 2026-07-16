@@ -7,6 +7,7 @@ import SmartPicksSection from './components/SmartPicksSection';
 import GallerySection from './components/GallerySection';
 import GuideSection from './components/GuideSection';
 import Footer from './components/Footer';
+import TravelerNotes from './components/TravelerNotes';
 
 type Page = 'home' | 'journeys' | 'smart-picks' | 'gallery' | 'guide';
 
@@ -59,6 +60,7 @@ function App() {
           }}
         />
         <PopularDestinations onCardClick={handleCardClick} />
+        <TravelerNotes />
         <Footer onNavigate={handleNavigate} onCardClick={handleCardClick} />
         <DestinationPanel
           destinationId={selectedDestinationId}

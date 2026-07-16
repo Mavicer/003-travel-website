@@ -4,16 +4,20 @@ import { Lock, Menu, X } from 'lucide-react';
 
 const IMAGE_SRC = '/hero-fallback.jpg';
 
-const NAV_LINKS = ['行旅', '智选', '随记', '指南'];
+const NAV_LINKS = [
+  { label: '行旅', sectionId: 'journeys' },
+  { label: '智选', sectionId: 'smart-picks' },
+  { label: '随记', sectionId: 'gallery' },
+  { label: '指南', sectionId: 'guide' },
+] as const;
 
-function scrollToDestinations() {
-  const el = document.getElementById('destinations');
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
-  }
+interface HeroProps {
+  onNavigate?: (sectionId: string) => void;
+  onQuickStart?: () => void;
+  onPlanMyTrip?: () => void;
 }
 
-export default function Hero() {
+export default function Hero({ onNavigate, onQuickStart, onPlanMyTrip }: HeroProps) {
   const bgContainerRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -121,21 +125,22 @@ export default function Hero() {
 
         {/* Center: Navigation (desktop only) */}
         <nav className="hidden md:flex liquid-glass rounded-full px-2 py-2 items-center gap-1">
-          {NAV_LINKS.map((link) => (
-            <span
-              key={link}
-              title="即将推出"
-              className="text-[11px] font-medium tracking-[0.12em] text-white/40 px-4 py-1.5 rounded-full cursor-default select-none"
+          {NAV_LINKS.map(({ label, sectionId }) => (
+            <button
+              key={label}
+              type="button"
+              onClick={() => onNavigate?.(sectionId)}
+              className="text-[11px] font-medium tracking-[0.12em] text-white/55 px-4 py-1.5 rounded-full transition-all duration-200 hover:text-white/90 hover:bg-white/[0.04] cursor-pointer bg-transparent border-none"
             >
-              {link}
-            </span>
+              {label}
+            </button>
           ))}
         </nav>
 
         {/* Right: CTA (desktop) */}
         <button
           type="button"
-          onClick={scrollToDestinations}
+          onClick={onQuickStart}
           className="hidden md:inline-flex liquid-glass rounded-full px-5 py-2.5 text-[11px] font-medium tracking-[0.12em] text-white/90 hover:text-amber-450 transition-colors duration-200 cursor-pointer"
         >
           即刻启程
@@ -163,21 +168,25 @@ export default function Hero() {
           className="absolute top-[56px] sm:top-[64px] left-4 right-4 z-40 md:hidden"
         >
           <div className="liquid-glass rounded-2xl px-5 py-6 flex flex-col items-center gap-3">
-            {NAV_LINKS.map((link) => (
-              <span
-                key={link}
-                title="即将推出"
-                className="text-[13px] font-medium tracking-[0.14em] text-white/40 cursor-default select-none py-1"
+            {NAV_LINKS.map(({ label, sectionId }) => (
+              <button
+                key={label}
+                type="button"
+                onClick={() => {
+                  closeMenu();
+                  onNavigate?.(sectionId);
+                }}
+                className="text-[13px] font-medium tracking-[0.14em] text-white/55 hover:text-white/90 transition-colors py-1 cursor-pointer bg-transparent border-none"
               >
-                {link}
-              </span>
+                {label}
+              </button>
             ))}
             <hr className="w-12 border-white/10 my-1" />
             <button
               type="button"
               onClick={() => {
                 closeMenu();
-                scrollToDestinations();
+                onQuickStart?.();
               }}
               className="text-[13px] font-medium tracking-[0.12em] text-amber-450 hover:text-white transition-colors py-1 cursor-pointer bg-transparent border-none"
             >
@@ -244,7 +253,7 @@ export default function Hero() {
         {/* CTA Button */}
         <button
           type="button"
-          onClick={scrollToDestinations}
+          onClick={onPlanMyTrip}
           className="bg-white text-black text-[14px] sm:text-[15px] font-medium rounded-full px-6 sm:px-8 py-3 sm:py-3.5 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
           style={{
             fontFamily: "'Inter', sans-serif",

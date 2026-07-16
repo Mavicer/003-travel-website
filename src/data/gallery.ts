@@ -33,8 +33,8 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
   {
     image: '/gallery/03-city.jpg',
     location: '上海 · 中国',
-    title: '不夜城的天际线',
-    story: '从外滩望向陆家嘴，百年万国建筑群与未来主义摩天楼在黄浦江两岸对望。这座城市同时活在1920年代与明天。',
+    title: '云端三子',
+    story: '仰头到极限才能看清它们的全貌。上海中心螺旋上升的棱线在夜色中切割天空，金茂大厦的尖顶刺入云层，环球金融中心像一扇通往未来的门。站在三座巨人脚下，你才真正理解什么叫"向上生长"。',
     mood: '活力',
     category: '城市',
     imageRationale: '上海陆家嘴三件套夜景 — 上海中心、金茂大厦、环球金融中心同框 (API: ZW7bWqalVck by William Ducret, 148KB)',

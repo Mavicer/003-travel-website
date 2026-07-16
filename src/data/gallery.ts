@@ -37,7 +37,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     story: '从外滩望向陆家嘴，百年万国建筑群与未来主义摩天楼在黄浦江两岸对望。这座城市同时活在1920年代与明天。',
     mood: '活力',
     category: '城市',
-    imageRationale: '现代都市天际线与水岸 — 摩天楼群与江面倒影构成的城市夜景，体现都市旅行的视觉张力',
+    imageRationale: '上海外滩陆家嘴夜景 — 城市天际线灯光璀璨 (API: BDvnfVeG_cY by Rich Xu, 183KB)。替代旧76KB低质量图片',
   },
   {
     image: '/gallery/04-street.jpg',

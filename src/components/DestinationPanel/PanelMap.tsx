@@ -2,6 +2,7 @@ import { useRef, useState, useCallback } from 'react';
 import Map, { Marker, NavigationControl } from 'react-map-gl/maplibre';
 import type { MapRef, MapEvent } from 'react-map-gl/maplibre';
 import * as maplibregl from 'maplibre-gl';
+import type { StyleSpecification } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { MapPin } from 'lucide-react';
 import type { Coordinates, Attraction } from '../../data/destinations';
@@ -20,8 +21,8 @@ export { type Coordinates, type Attraction };
 
 /** Dark cinematic style — CartoDB light_all base + paint darkening.
  *  {ratio} → @2x on Retina (512px PNG), empty on 1× (256px PNG). */
-export const DARK_STYLE = {
-  version: 8 as const,
+export const DARK_STYLE: StyleSpecification = {
+  version: 8,
   sources: {
     osm: {
       type: 'raster' as const,

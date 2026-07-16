@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import * as LucideIcons from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import type { Highlight } from '../../data/destinations';
 
 interface Props {
@@ -8,16 +9,9 @@ interface Props {
   highlights: Highlight[];
 }
 
-type IconComponent = React.ComponentType<{
-  size?: number;
-  strokeWidth?: number;
-  className?: string;
-  style?: React.CSSProperties;
-}>;
-
-function getIcon(name: string) {
-  const icons = LucideIcons as unknown as Record<string, IconComponent>;
-  return icons[name] || (LucideIcons.MapPin as unknown as IconComponent);
+function getIcon(name: string): LucideIcon {
+  const icons = LucideIcons as unknown as Record<string, LucideIcon>;
+  return icons[name] || (LucideIcons.MapPin as unknown as LucideIcon);
 }
 
 /** Returns true when the character is a CJK unified ideograph — suitable for a drop cap. */

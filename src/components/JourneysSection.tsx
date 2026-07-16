@@ -65,6 +65,8 @@ function ThemeCard({
   const destinations = theme.destinationIds
     .map((id) => DESTINATIONS.find((d) => d.id === id))
     .filter(Boolean);
+  const getImage = (destId: string, fallback: string) =>
+    theme.themeImages?.[destId] || fallback;
 
   return (
     <AnimateIn>
@@ -180,7 +182,7 @@ function ThemeCard({
                   style={{ aspectRatio: '16/10' }}
                 >
                   <img
-                    src={dest.image}
+                    src={getImage(dest.id, dest.image)}
                     alt={dest.title}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

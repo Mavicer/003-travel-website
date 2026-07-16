@@ -10,6 +10,8 @@ export interface TravelTheme {
   suitableFor: string;
   destinationIds: string[];
   highlight: string;
+  /** Optional: per-destination images specific to this theme (e.g., food photos for 美食 theme) */
+  themeImages?: Record<string, string>;
   /** Theme-specific image — visually represents the travel style, not a destination cover */
   image: string;
   imageAlt: string;
@@ -80,6 +82,15 @@ export const TRAVEL_THEMES: TravelTheme[] = [
     atmosphere: ['温暖', '文化', '奢华'],
     suitableFor: '美食爱好者、烹饪探索者、文化旅行者',
     destinationIds: ['kyoto', 'shanghai', 'amalfi-coast', 'bali', 'chongqing', 'xian', 'hangzhou'],
+    themeImages: {
+      kyoto: '/journeys/food-kyoto.jpg',
+      shanghai: '/journeys/food-shanghai.jpg',
+      'amalfi-coast': '/journeys/food-amalfi-coast.jpg',
+      bali: '/journeys/food-bali.jpg',
+      chongqing: '/journeys/food-chongqing.jpg',
+      xian: '/journeys/food-xian.jpg',
+      hangzhou: '/journeys/food-hangzhou.jpg',
+    },
     highlight: '跨越七城的味觉地图 — 从东亚精致料理到地中海家常味道，从山城火锅到古都夜市，再到江南茶食。',
     image: '/journeys/culinary.jpg',
     imageAlt: '精心摆盘的美食与新鲜食材——从街头小吃到精致料理的味觉之旅',

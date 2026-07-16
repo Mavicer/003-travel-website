@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import gsap from 'gsap';
 import {
-  ArrowLeft, Sparkles, MapPin, Star, ChevronRight,
+  ArrowLeft, Sparkles, Star,
 } from 'lucide-react';
 import {
   type SmartPicksPreferences,

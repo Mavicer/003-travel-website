@@ -71,6 +71,8 @@ export interface PracticalInfo {
 
 export interface Destination {
   image: string;
+  imageAlt: string;
+  imageMood: string;
   title: string;
   subtitle: string;
   description: string;
@@ -97,6 +99,8 @@ export const DESTINATIONS: Destination[] = [
     id: 'kyoto',
     image:
       '/destinations/kyoto.jpg',
+    imageAlt: '京都东山区的竹林晨雾与古寺檐角',
+    imageMood: '静谧禅意',
     title: '京都',
     subtitle: '日本',
     description:
@@ -286,6 +290,8 @@ export const DESTINATIONS: Destination[] = [
     id: 'santorini',
     image:
       '/destinations/santorini.jpg',
+    imageAlt: '爱琴海悬崖上的白色建筑群在夕阳中闪耀',
+    imageMood: '浪漫璀璨',
     title: '圣托里尼',
     subtitle: '希腊',
     description:
@@ -466,6 +472,8 @@ export const DESTINATIONS: Destination[] = [
     id: 'banff',
     image:
       '/destinations/banff.jpg',
+    imageAlt: '落基山脉蓝绿色冰川湖倒映雪峰',
+    imageMood: '磅礴宁静',
     title: '班夫',
     subtitle: '加拿大',
     description:
@@ -646,6 +654,8 @@ export const DESTINATIONS: Destination[] = [
     id: 'amalfi-coast',
     image:
       '/destinations/amalfi-coast.jpg',
+    imageAlt: '第勒尼安海悬崖上的彩色村庄与柠檬园',
+    imageMood: '温暖明媚',
     title: '阿马尔菲海岸',
     subtitle: '意大利',
     description:
@@ -825,6 +835,8 @@ export const DESTINATIONS: Destination[] = [
     id: 'bali',
     image:
       '/destinations/bali.jpg',
+    imageAlt: '巴厘岛翠绿梯田与热带雨林中的神庙',
+    imageMood: '灵性恬静',
     title: '巴厘岛',
     subtitle: '印度尼西亚',
     description:
@@ -1005,6 +1017,8 @@ export const DESTINATIONS: Destination[] = [
     id: 'patagonia',
     image:
       '/destinations/patagonia.jpg',
+    imageAlt: '巴塔哥尼亚锯齿状雪峰俯瞰冰川湖泊',
+    imageMood: '苍茫壮阔',
     title: '巴塔哥尼亚',
     subtitle: '阿根廷',
     description:
@@ -1184,6 +1198,8 @@ export const DESTINATIONS: Destination[] = [
     id: 'shanghai',
     image:
       '/destinations/shanghai.jpg',
+    imageAlt: '外滩黄浦江对岸陆家嘴摩天楼群夜色璀璨',
+    imageMood: '繁华璀璨',
     title: '上海',
     subtitle: '中国',
     description:
@@ -1365,6 +1381,8 @@ export const DESTINATIONS: Destination[] = [
     id: 'jiuzhaigou',
     image:
       '/destinations/jiuzhaigou.jpg',
+    imageAlt: '九寨沟五彩池与秋色森林交相辉映',
+    imageMood: '绝色空灵',
     title: '九寨沟',
     subtitle: '中国',
     description:
@@ -1537,5 +1555,365 @@ export const DESTINATIONS: Destination[] = [
 
     aiTags: ['湖泊', '森林', '摄影', '徒步', '自然', '藏族文化', '瀑布'],
     aiTravelStyle: '极致自然探索 — 适合风光摄影师、徒步爱好者与自然疗愈追寻者',
+  },
+
+  /* ═══════════════════════════════════════════════════════════
+     重庆 — 山城雾都的魔幻现实主义
+     ═══════════════════════════════════════════════════════════ */
+  {
+    id: 'chongqing',
+    image: '/destinations/chongqing.jpg',
+    imageAlt: '洪崖洞金色吊脚楼与嘉陵江夜景倒影',
+    imageMood: '魔幻滚烫',
+    title: '重庆',
+    subtitle: '中国',
+    description: '山城雾都的魔幻现实主义 — 轻轨穿楼，火锅沸腾，两江绕城而过。',
+
+    coordinates: { lat: 29.5630, lng: 106.5516 },
+    mapViewport: { center: { lat: 29.5650, lng: 106.5550 }, zoom: 13, pitch: 55, bearing: -20 },
+
+    atmosphere: ['冒险', '温暖', '文化'],
+
+    introduction: `重庆，中国最富戏剧性的都市景观。这座建在群山与两江交汇处的城市，以"8D魔幻都市"的称号闻名于世——轻轨穿楼而过，立交桥在空中盘旋，洪崖洞的吊脚楼层层叠叠挂在悬崖上，夜晚灯火璀璨如千与千寻的童话世界。
+
+但重庆不只有视觉奇观。这是一座被火锅定义了灵魂的城市。九宫格里的红油沸腾翻滚，花椒的麻与辣椒的辣在舌尖交织，毛肚、鹅肠、老肉片在滚烫中找到自己的位置。重庆人说，没有什么是一顿火锅解决不了的，如果有，那就两顿。
+
+重庆的美在于它的矛盾：山城的崎岖与水运的通达，雾都的朦胧与夜景的璀璨，老巷子的烟火气与天际线的未来感。坐一次长江索道，从空中跨越两江；在南滨路吹着江风看对岸灯火；钻进解放碑的巷子里找一碗地道的小面——这是一座能让你在向上爬坡的喘息中，感受到生活滚烫温度的城市。`,
+
+    highlights: [
+      { icon: 'Building2', title: '洪崖洞夜景', description: '悬崖上的吊脚楼群，夜晚金色灯光倾泻而下，倒映在嘉陵江中，现实版的千与千寻' },
+      { icon: 'Train', title: '轻轨穿楼', description: '李子坝站——全国唯一轻轨穿楼而过的奇观，重庆魔幻交通的代表作' },
+      { icon: 'UtensilsCrossed', title: '火锅江湖', description: '九宫格里的花椒与牛油，毛肚七上八下，是重庆人最滚烫的社交仪式' },
+      { icon: 'Eye', title: '长江索道', description: '30年历史的空中走廊，从长江上空划过，是俯瞰山城的最佳移动观景台' },
+    ],
+
+    attractions: [
+      {
+        id: 'hongyadong',
+        name: '洪崖洞',
+        coordinates: { lat: 29.5649, lng: 106.5780 },
+        description: '建在嘉陵江边悬崖上的11层吊脚楼建筑群，夜晚灯火辉煌，倒映江中。顶层是城市广场，底层是滨江路——这就是8D重庆的经典诠释。',
+        category: '地标',
+        rating: 5,
+        bestTime: '日落前到达，守候亮灯瞬间（约19:00）',
+      },
+      {
+        id: 'jiefangbei',
+        name: '解放碑',
+        coordinates: { lat: 29.5605, lng: 106.5740 },
+        description: '重庆的精神地标与商业中心。抗战胜利纪功碑矗立在步行街中央，周围高楼林立，是感受重庆都市脉搏的最佳地点。',
+        category: '地标',
+        rating: 4,
+        bestTime: '全天，夜景尤佳',
+      },
+      {
+        id: 'ciqikou',
+        name: '磁器口古镇',
+        coordinates: { lat: 29.5810, lng: 106.4490 },
+        description: '嘉陵江畔的千年古镇，石板路蜿蜒在明清建筑之间。陈麻花的香气飘满街巷，茶馆里的川剧变脸让人拍案叫绝。',
+        category: '美食',
+        rating: 4,
+        bestTime: '上午 9:00-11:00 避开人流高峰',
+      },
+      {
+        id: 'yangtze-cableway',
+        name: '长江索道',
+        coordinates: { lat: 29.5580, lng: 106.5830 },
+        description: '运行超过30年的空中索道，从渝中区跨越长江到达南岸。在空中俯瞰两江交汇与山城天际线，是重庆独有的交通体验。',
+        category: '观景点',
+        rating: 5,
+        bestTime: '傍晚时分，夕阳与夜景交替',
+      },
+      {
+        id: 'nanshan-tree',
+        name: '南山一棵树观景台',
+        coordinates: { lat: 29.5470, lng: 106.6070 },
+        description: '俯瞰重庆全景的最佳位置。站在南山之巅，渝中半岛的天际线、两江交汇的壮阔、跨江大桥的光带尽收眼底。',
+        category: '观景点',
+        rating: 5,
+        bestTime: '日落前1小时到达，拍摄日转夜的完整过程',
+      },
+      {
+        id: 'liziba',
+        name: '李子坝轻轨站',
+        coordinates: { lat: 29.5530, lng: 106.5370 },
+        description: '重庆魔幻交通的终极象征——轻轨2号线从一栋19层住宅楼的6-8层穿楼而过。楼下有专门的观景平台供游客仰头惊叹。',
+        category: '地标',
+        rating: 4,
+        bestTime: '白天拍摄更清晰',
+      },
+    ],
+
+    experiences: [
+      {
+        id: 'hotpot-crawl',
+        title: '火锅巡礼',
+        description: '从防空洞里的老火锅到江景露台的网红店，一天之内体验重庆火锅的三张面孔：江湖、精致与市井。',
+        category: '美食',
+        duration: '全天',
+        difficulty: '轻松',
+      },
+      {
+        id: 'nanbin-road-night',
+        title: '南滨路夜行',
+        description: '沿南滨路漫步，对岸渝中半岛的灯火倒映在长江中。这是重庆最浪漫的夜晚散步路线，夜景密度堪比香港维多利亚港。',
+        category: '夜生活',
+        duration: '2 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'mountain-trail',
+        title: '山城步道徒步',
+        description: '从鹅岭到佛图关的山城第三步道，串联起老重庆的城墙、寺庙与民居。爬坡上坎之间，感受真正的山城肌理。',
+        category: '户外',
+        duration: '3 小时',
+        difficulty: '适中',
+      },
+      {
+        id: 'two-rivers-cruise',
+        title: '两江夜游',
+        description: '乘游船从嘉陵江驶入长江，360度环绕渝中半岛。洪崖洞的金色、千厮门大桥的银白、来福士的水晶切割——每一面都是不同的重庆。',
+        category: '夜生活',
+        duration: '1 小时',
+        difficulty: '轻松',
+      },
+    ],
+
+    itinerary: [
+      {
+        day: 1,
+        title: '渝中半岛与两江夜色',
+        items: [
+          { time: '09:00', title: '解放碑步行街', description: '从重庆的心脏出发，仰望周围摩天大楼，感受山城的都市脉搏。', attractionId: 'jiefangbei', type: '活动' },
+          { time: '10:30', title: '长江索道', description: '乘坐空中索道从长江上空划过，俯瞰两江交汇的城市奇观。', attractionId: 'yangtze-cableway', type: '交通' },
+          { time: '12:00', title: '南滨路午餐', description: '在南岸找一家江景餐厅，边吃午餐边看对岸渝中半岛的天际线。', type: '餐饮' },
+          { time: '14:00', title: '山城步道', description: '沿第三步道拾级而上，穿行于老城墙与黄桷树之间，体验真正的山城质感。', attractionId: 'mountain-trail', type: '活动' },
+          { time: '17:30', title: '洪崖洞日落', description: '在夜幕降临时分到达洪崖洞，守候吊脚楼亮灯的魔幻瞬间。', attractionId: 'hongyadong', type: '活动' },
+          { time: '19:30', title: '洞子老火锅', description: '钻进防空洞改造的火锅店，毛肚、鹅肠、黄喉——在红油翻滚中体验重庆最滚烫的社交仪式。', type: '餐饮' },
+        ],
+      },
+      {
+        day: 2,
+        title: '魔幻交通与古镇时光',
+        items: [
+          { time: '08:30', title: '李子坝轻轨站', description: '见证轻轨穿楼的魔幻一刻，在观景平台用仰角记录山城独有奇观。', attractionId: 'liziba', type: '活动' },
+          { time: '10:00', title: '鹅岭二厂', description: '由民国印钞厂改造的文创园区，工业遗存与当代艺术在此碰撞，天台可俯瞰两江交汇。', type: '活动' },
+          { time: '12:00', title: '中山四路午餐', description: '重庆最美街道上找一家小馆，品尝地道的水煮鱼和辣子鸡。', type: '餐饮' },
+          { time: '14:00', title: '磁器口古镇', description: '在嘉陵江畔的千年古镇里穿巷子、尝麻花、看变脸，感受老重庆的市井风情。', attractionId: 'ciqikou', type: '活动' },
+          { time: '17:00', title: '渣滓洞/白公馆', description: '红色旅游地标，在歌乐山的苍翠中重温那段烽火岁月。', type: '活动' },
+          { time: '19:00', title: '南山一棵树', description: '登上南山之巅，在重庆最经典的观景台守候渝中半岛从黄昏到璀璨的完整过渡。', attractionId: 'nanshan-tree', type: '活动' },
+        ],
+      },
+      {
+        day: 3,
+        title: '本地生活与江湖味道',
+        items: [
+          { time: '08:00', title: '重庆小面早餐', description: '钻进解放碑附近的老巷子，找一家排长队的小面摊。豌杂面或牛肉面——重庆人的一天从一碗红油开始。', type: '餐饮' },
+          { time: '09:30', title: '交通茶馆', description: '藏在黄桷坪老街的30年老茶馆。一块钱的盖碗茶，打牌的老人，斑驳的墙面——这里是重庆最真实的市井切面。', type: '休息' },
+          { time: '11:00', title: '川美涂鸦街', description: '黄桷坪的整条街都被涂鸦覆盖，从居民楼外墙到店铺卷帘门——这是全国最大的涂鸦艺术作品。', type: '活动' },
+          { time: '12:30', title: '江湖菜午餐', description: '来凤鱼、璧山兔、黔江鸡杂——江湖菜的精髓在于猛火、重料、大盘，是重庆人最真实的家常味道。', type: '餐饮' },
+          { time: '14:30', title: '北仓文创街区', description: '旧仓库改造的文艺街区，独立书店、手作工作室、精品咖啡馆散落其间——重庆文艺青年的秘密基地。', type: '活动' },
+          { time: '17:00', title: '两江夜游', description: '以一次两江夜游作为重庆之旅的终章。从水上回望这座城市的灯火，你会发现它比你想象的更立体、更滚烫。', attractionId: 'two-rivers-cruise', type: '活动' },
+        ],
+      },
+    ],
+
+    seasons: [
+      { season: '春', months: '3月-5月', description: '气温舒适，江风不燥。山城步道的黄桷树抽出新芽，是徒步探索的最佳季节', temperature: '15°C - 26°C', rating: 4 },
+      { season: '夏', months: '6月-8月', description: '火炉重庆名不虚传，白日高温但夜晚江风凉爽。夏季的重庆之夜是最迷人的', temperature: '26°C - 38°C', rating: 3 },
+      { season: '秋', months: '9月-11月', description: '秋高气爽，雾都透出难得的蓝天。金秋时节的重庆最适合户外探索与夜景拍摄', temperature: '16°C - 26°C', rating: 5 },
+      { season: '冬', months: '12月-2月', description: '雾都本色尽显。冬日的重庆雾气缭绕，火锅的热气在冷空气中格外诱人', temperature: '6°C - 12°C', rating: 3 },
+    ],
+
+    practicalInfo: {
+      language: '普通话、重庆话，旅游区普通话通用',
+      currency: '人民币 (CNY)',
+      timezone: 'UTC+8 (东八区)',
+      visa: '无需签证（国内目的地）',
+      bestSeason: '3月-5月, 9月-11月',
+      averageCost: '¥300-1,000/天 (不含往返交通)',
+    },
+
+    aiTags: ['火锅', '夜景', '山城', '美食', '轻轨', '摄影', '都市', '江湖'],
+    aiTravelStyle: '魔幻山城深度游 — 适合城市探索者、美食冒险家、建筑摄影玩家与夜生活爱好者',
+  },
+
+  /* ═══════════════════════════════════════════════════════════
+     西安 — 十三朝古都的千年回响
+     ═══════════════════════════════════════════════════════════ */
+  {
+    id: 'xian',
+    image: '/destinations/xian.jpg',
+    imageAlt: '秦始皇兵马俑一号坑陶俑军阵肃穆列队',
+    imageMood: '恢弘肃穆',
+    title: '西安',
+    subtitle: '中国',
+    description: '十三朝古都的千年回响 — 兵马俑静默列阵，古城墙上的风吹过汉唐。',
+
+    coordinates: { lat: 34.3416, lng: 108.9398 },
+    mapViewport: { center: { lat: 34.3416, lng: 108.9450 }, zoom: 13, pitch: 45, bearing: 0 },
+
+    atmosphere: ['历史', '文化', '禅意'],
+
+    introduction: `西安，古称长安，是中华文明最具重量的城市之一。十三朝在此建都，丝绸之路从这里出发，兵马俑在地下沉默了两千多年。当你站在明城墙之上，脚下的每一块砖都压着千年的光阴——周、秦、汉、唐，四个最辉煌的朝代在这片土地上轮番上演，留下了一座活着的博物馆。
+
+但西安不只有历史。回民街的烟火气是另一种语言：羊肉泡馍的汤白如奶，肉夹馍的外皮酥到掉渣，biangbiang面的宽度如裤带在案板上发出清脆的响声。这座城市的味觉记忆比它的城墙还要古老，一碗羊肉泡馍里的香料配方可以追溯到丝绸之路上的驼铃声。
+
+在西安，你需要学会在时空之间来回穿越。上午在兵马俑一号坑前感受秦帝国的磅礴气势，下午在大雁塔下仰望玄奘的足迹，傍晚租一辆自行车骑上14公里的古城墙，看夕阳把整座长安城染成一片金色。入夜后钻进回民街的人潮中，左手肉夹馍右手酸梅汤——你会忽然意识到，十三朝古都，从未真正远去。`,
+
+    highlights: [
+      { icon: 'Landmark', title: '兵马俑', description: '八千陶俑静默列阵两千年——秦始皇的地下军团，世界第八大奇迹的真实震撼' },
+      { icon: 'Shield', title: '古城墙', description: '中国保存最完整的古代城垣，14公里完整闭环，骑行一圈穿越千年' },
+      { icon: 'BookOpen', title: '陕历博', description: '华夏宝库——从西周青铜到盛唐金银，馆藏171万件文物讲述中华文明最璀璨的篇章' },
+      { icon: 'UtensilsCrossed', title: '回民街', description: '泡馍、夹馍、biangbiang面——丝绸之路上的香料记忆，在这条街的烟火里活到了今天' },
+    ],
+
+    attractions: [
+      {
+        id: 'terracotta-army',
+        name: '秦始皇兵马俑',
+        coordinates: { lat: 34.3850, lng: 109.2730 },
+        description: '世界第八大奇迹。一号坑中的六千陶俑以战斗队形排列，每张面孔都独一无二。站在坑边俯瞰这支沉默了两千年的地下军团，感受到的不仅是震撼，还有秦帝国那不可一世的雄心。',
+        category: '博物馆',
+        rating: 5,
+        bestTime: '上午 8:30 开门即到，避开人流高峰',
+      },
+      {
+        id: 'city-wall',
+        name: '西安城墙',
+        coordinates: { lat: 34.2600, lng: 108.9420 },
+        description: '中国现存规模最大、保存最完整的古代城垣。全长13.74公里，墙高12米，顶宽12-14米。建议从南门（永宁门）登城，租一辆自行车骑完全程。',
+        category: '地标',
+        rating: 5,
+        bestTime: '傍晚时分登城，夕阳与夜景交替',
+      },
+      {
+        id: 'big-wild-goose-pagoda',
+        name: '大雁塔',
+        coordinates: { lat: 34.2196, lng: 108.9590 },
+        description: '玄奘为保存由天竺带回的经卷佛像而主持修建。七层方塔矗立在大慈恩寺中，是盛唐气象最完整的建筑遗存。北广场的音乐喷泉是亚洲最大的矩阵喷泉。',
+        category: '寺庙',
+        rating: 5,
+        bestTime: '下午参观，傍晚在北广场看喷泉表演',
+      },
+      {
+        id: 'muslim-quarter',
+        name: '回民街',
+        coordinates: { lat: 34.2660, lng: 108.9410 },
+        description: '西安最有烟火气的美食街区。从鼓楼向北延伸，数百家小吃摊和小馆挤满了青石板路。肉夹馍、羊肉泡馍、麻酱凉皮、柿子饼——每一样都值得排队。',
+        category: '美食',
+        rating: 4,
+        bestTime: '傍晚至夜间，气氛最浓',
+      },
+      {
+        id: 'huaqing-palace',
+        name: '华清宫',
+        coordinates: { lat: 34.3640, lng: 109.2070 },
+        description: '唐玄宗与杨贵妃的爱情故事发生地。"春寒赐浴华清池，温泉水滑洗凝脂"——白居易的《长恨歌》让这里的温泉与爱情流传千古。',
+        category: '地标',
+        rating: 4,
+        bestTime: '上午，参观后可顺路去兵马俑',
+      },
+      {
+        id: 'shaanxi-history-museum',
+        name: '陕西历史博物馆',
+        coordinates: { lat: 34.2240, lng: 108.9500 },
+        description: '"给我一天，还你万年"——中国第一座大型现代化国家级博物馆。从西周青铜器到唐代金银器，171万件藏品勾勒出中华文明最辉煌的篇章。',
+        category: '博物馆',
+        rating: 5,
+        bestTime: '上午 8:30，需提前预约',
+      },
+    ],
+
+    experiences: [
+      {
+        id: 'city-wall-cycling',
+        title: '城墙骑行',
+        description: '在14公里的古城墙上骑行一周，脚下是明朝的砖石，远眺是现代的西安。一圈约1.5小时，南门段城墙最宽、景色最佳。',
+        category: '户外',
+        duration: '1.5 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'muslim-street-food',
+        title: '回民街美食探索',
+        description: '从羊肉泡馍到肉夹馍，从麻酱凉皮到甑糕，从酸梅汤到冰峰汽水——用胃丈量西安，是理解这座古城最诚实的方式。',
+        category: '美食',
+        duration: '2-3 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'everlasting-sorrow',
+        title: '长恨歌实景演出',
+        description: '在华清宫的山水之间，以骊山为背景的实景历史舞剧，重现唐玄宗与杨贵妃的爱情传奇。光影、水幕与舞蹈，将盛唐的繁华与悲欢演绎到极致。',
+        category: '文化',
+        duration: '1 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'hanfu-experience',
+        title: '汉服穿越体验',
+        description: '在大唐不夜城换上汉服，在仿唐建筑群中漫步。恍惚之间，你仿佛行走在千年前的长安街头，成为这座古城故事的一部分。',
+        category: '文化',
+        duration: '2-3 小时',
+        difficulty: '轻松',
+      },
+    ],
+
+    itinerary: [
+      {
+        day: 1,
+        title: '秦风唐韵',
+        items: [
+          { time: '08:00', title: '秦始皇兵马俑', description: '首批进入一号坑，在人潮到来之前独享与八千陶俑的沉默对视。', attractionId: 'terracotta-army', type: '活动' },
+          { time: '12:00', title: '临潼午餐', description: '在兵马俑附近的农家小院品尝陕西面食——油泼面或臊子面，简单直接的味道。', type: '餐饮' },
+          { time: '14:00', title: '华清宫', description: '在骊山脚下的皇家温泉园林中漫步，想象杨贵妃"温泉水滑洗凝脂"的盛唐时光。', attractionId: 'huaqing-palace', type: '活动' },
+          { time: '17:30', title: '返回市区', description: '乘车返回西安市区，稍作休整。', type: '交通' },
+          { time: '19:00', title: '回民街晚餐', description: '羊肉泡馍、红柳烤肉、麻酱凉皮、柿子饼——用味觉开启你的西安之旅。', attractionId: 'muslim-quarter', type: '餐饮' },
+        ],
+      },
+      {
+        day: 2,
+        title: '城墙内外',
+        items: [
+          { time: '08:30', title: '陕西历史博物馆', description: '从西周青铜到盛唐金银，在国宝中穿越华夏五千年的辉煌。', attractionId: 'shaanxi-history-museum', type: '活动' },
+          { time: '12:00', title: '小寨午餐', description: '博物馆附近的小寨商圈，品尝正宗的三秦套餐——凉皮、肉夹馍、冰峰汽水。', type: '餐饮' },
+          { time: '14:00', title: '大雁塔', description: '登大雁塔，俯瞰西安中轴线。在北广场等待亚洲最大音乐喷泉的表演。', attractionId: 'big-wild-goose-pagoda', type: '活动' },
+          { time: '16:30', title: '古城墙骑行', description: '从南门（永宁门）登城，租一辆自行车，在14公里的城墙闭环上感受时空交叠。夕阳时分光线最佳。', attractionId: 'city-wall', type: '活动' },
+          { time: '19:30', title: '大唐不夜城', description: '夜幕降临后的大唐不夜城灯火辉煌，仿唐建筑与现代灯光交织。穿上汉服，做一晚唐朝人。', type: '活动' },
+        ],
+      },
+      {
+        day: 3,
+        title: '古都日常',
+        items: [
+          { time: '08:00', title: '洒金桥早市', description: '比回民街更local的美食街。早上的洒金桥是真正属于西安人的——胡辣汤、蛋菜夹馍、甑糕，每一样都热气腾腾。', type: '餐饮' },
+          { time: '09:30', title: '西安碑林博物馆', description: '中国最大的石质书库。从汉代到清代的四千多方碑石，是汉字书写艺术的三维教科书。', type: '活动' },
+          { time: '12:00', title: '德发长饺子宴', description: '百年老字号。一桌饺子百种形态，从元宝到金鱼——西安人把面食做到了艺术的境界。', type: '餐饮' },
+          { time: '14:00', title: '书院门步行街', description: '碑林旁边的文玩书画一条街。笔墨纸砚、印章篆刻、关中皮影——寻找最有文化感的旅行纪念品。', type: '活动' },
+          { time: '16:00', title: '高家大院', description: '隐藏在回民街深处的明代榜眼府邸。在古老的关中四合院里看一场皮影戏，是老西安才懂的雅趣。', type: '活动' },
+          { time: '18:00', title: '告别晚宴', description: '最后一晚，回到回民街或永兴坊，把没吃过的小吃都补齐——因为西安，只来一次是不够的。', type: '餐饮' },
+        ],
+      },
+    ],
+
+    seasons: [
+      { season: '春', months: '3月-5月', description: '春风拂过古城墙，樱花与海棠次第开放。气温适宜，是骑行城墙和户外探索的黄金季节', temperature: '8°C - 24°C', rating: 5 },
+      { season: '夏', months: '6月-8月', description: '夏日炎热但干燥。回民街的冰镇酸梅汤是解暑神器，夜晚大唐不夜城的灯光秀尤为璀璨', temperature: '22°C - 35°C', rating: 3 },
+      { season: '秋', months: '9月-11月', description: '秋高气爽，天空湛蓝。古城墙在金色银杏的映衬下格外壮美，是一年中最适合摄影的季节', temperature: '10°C - 24°C', rating: 5 },
+      { season: '冬', months: '12月-2月', description: '冬日的西安偶有飘雪，城墙雪景如诗如画。一碗热气腾腾的羊肉泡馍是冬天最温暖的慰藉', temperature: '-4°C - 8°C', rating: 4 },
+    ],
+
+    practicalInfo: {
+      language: '普通话、陕西话，旅游区普通话通用',
+      currency: '人民币 (CNY)',
+      timezone: 'UTC+8 (东八区)',
+      visa: '无需签证（国内目的地）',
+      bestSeason: '3月-5月, 9月-11月',
+      averageCost: '¥400-1,200/天 (不含往返交通)',
+    },
+
+    aiTags: ['历史', '美食', '博物馆', '古城', '摄影', '文化', '汉服', '骑行'],
+    aiTravelStyle: '千年古都深度游 — 适合历史爱好者、美食探索者、文化追寻者与汉服体验玩家',
   },
 ];

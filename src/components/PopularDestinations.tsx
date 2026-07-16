@@ -1,15 +1,23 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import DestinationCard from './DestinationCard';
 import { DESTINATIONS } from '../data/destinations';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 interface Props {
   onCardClick?: (id: string) => void;
 }
 
+const VISIBLE_DEFAULT = 6;
+
 export default function PopularDestinations({ onCardClick }: Props) {
+  const [showAll, setShowAll] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
+  const expandRef = useRef<HTMLDivElement>(null);
+
+  const displayed = showAll ? DESTINATIONS : DESTINATIONS.slice(0, VISIBLE_DEFAULT);
+  const hidden = DESTINATIONS.length - VISIBLE_DEFAULT;
 
   useEffect(() => {
     const heading = headingRef.current;
@@ -63,17 +71,49 @@ export default function PopularDestinations({ onCardClick }: Props) {
           </h2>
         </div>
 
-        {/* Card grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {DESTINATIONS.map((dest, i) => (
-            <DestinationCard
-              key={dest.title}
-              destination={dest}
-              index={i}
-              onClick={onCardClick}
-            />
-          ))}
+        {/* Card grid — key forces animation remount on expand */}
+        <div key={showAll ? 'all' : 'folded'}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {displayed.map((dest, i) => (
+              <DestinationCard
+                key={dest.title}
+                destination={dest}
+                index={i}
+                onClick={onCardClick}
+              />
+            ))}
+          </div>
         </div>
+
+        {/* Expand toggle — Apple-style subtle button */}
+        {hidden > 0 && (
+          <div ref={expandRef} className="text-center pt-10">
+            <button
+              type="button"
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 text-[13px] font-medium rounded-full px-6 py-3 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                background: 'rgba(255,255,255,0.03)',
+                color: showAll ? 'rgba(255,255,255,0.4)' : 'rgba(255,255,255,0.6)',
+                border: '1px solid rgba(255,255,255,0.06)',
+              }}
+            >
+              {showAll ? (
+                <>
+                  收起
+                  <ChevronUp size={14} strokeWidth={1.5} />
+                </>
+              ) : (
+                <>
+                  探索更多目的地
+                  <ChevronDown size={14} strokeWidth={1.5} />
+                  <span style={{ color: '#C8884B', marginLeft: '2px' }}>+{hidden}</span>
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Card fade-in keyframes */}

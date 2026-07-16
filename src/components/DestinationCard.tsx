@@ -91,7 +91,7 @@ export default function DestinationCard({ destination, index, onClick }: Props) 
         <img
           ref={imgRef}
           src={destination.image}
-          alt={destination.title}
+          alt={destination.imageAlt || destination.title}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
           style={{ transformOrigin: 'center center' }}

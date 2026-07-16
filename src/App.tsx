@@ -6,6 +6,7 @@ import JourneysSection from './components/JourneysSection';
 import SmartPicksSection from './components/SmartPicksSection';
 import GallerySection from './components/GallerySection';
 import GuideSection from './components/GuideSection';
+import Footer from './components/Footer';
 
 type Page = 'home' | 'journeys' | 'smart-picks' | 'gallery' | 'guide';
 
@@ -58,6 +59,7 @@ function App() {
           }}
         />
         <PopularDestinations onCardClick={handleCardClick} />
+        <Footer onNavigate={handleNavigate} onCardClick={handleCardClick} />
         <DestinationPanel
           destinationId={selectedDestinationId}
           isOpen={isPanelOpen}
@@ -82,6 +84,7 @@ function App() {
       {currentPage === 'guide' && (
         <GuideSection onBack={handleBack} />
       )}
+      <Footer onNavigate={handleNavigate} onCardClick={handleCardClick} />
       <DestinationPanel
         destinationId={selectedDestinationId}
         isOpen={isPanelOpen}

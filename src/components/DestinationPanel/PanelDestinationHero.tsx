@@ -57,7 +57,7 @@ export default function PanelDestinationHero({ destination }: Props) {
         <img
           ref={imageRef}
           src={destination.image}
-          alt={destination.title}
+          alt={destination.imageAlt || destination.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
       </div>

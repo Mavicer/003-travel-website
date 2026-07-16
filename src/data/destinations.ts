@@ -1994,4 +1994,377 @@ export const DESTINATIONS: Destination[] = [
     aiTags: ['历史', '美食', '博物馆', '古城', '摄影', '文化', '汉服', '骑行'],
     aiTravelStyle: '千年古都深度游 — 适合历史爱好者、美食探索者、文化追寻者与汉服体验玩家',
   },
+
+  /* ═══════════════════════════════════════════════════════════
+     杭州 — 江南忆，最忆是杭州
+     ═══════════════════════════════════════════════════════════ */
+  {
+    id: 'hangzhou',
+    image: '/destinations/hangzhou.jpg',
+    imageAlt: '西湖全景与雷峰塔倒影',
+    imageMood: '温婉如画',
+    imageSource: 'Unsplash photo-peq-khnWDbg',
+    imageProvider: 'unsplash',
+    imageLocation: 'West Lake, Hangzhou, Zhejiang, China',
+    imageScene: 'Large body of water surrounded by trees with Leifeng Pagoda visible',
+    imageSearchQuery: 'West Lake Hangzhou Leifeng Pagoda panorama',
+    imageVerified: true,
+    verificationMethod: 'API-verified: Unsplash peq-khnWDbg — West Lake Hangzhou scene. MD5 unique.',
+    title: '杭州',
+    subtitle: '中国',
+    description: '江南忆，最忆是杭州 — 西湖烟雨中的千年诗画，龙井茶山上的云雾时光。',
+
+    coordinates: { lat: 30.2590, lng: 120.1340 },
+    mapViewport: { center: { lat: 30.2500, lng: 120.1400 }, zoom: 12, pitch: 40, bearing: -5 },
+
+    atmosphere: ['宁静', '文化', '浪漫'],
+
+    introduction: `杭州，中国最富诗意的城市之一。马可·波罗曾称它为"世界上最美丽华贵之天城"，而白居易一句"江南忆，最忆是杭州"道尽了多少文人墨客对这座城市的眷恋。西湖是这座城市的灵魂——苏堤春晓、断桥残雪、雷峰夕照、三潭印月，每一个名字都是一幅画，每一个画面都是一首诗。
+
+但杭州不只有西湖。龙井村的茶山在晨雾中层层叠叠，采茶人的指尖在嫩芽间翻飞，一杯明前龙井里泡着整个江南的春天。灵隐寺的钟声穿越千年，在飞来峰的青翠中回荡。而西溪湿地的芦苇荡里，摇橹船悄无声息地划过水面，惊起一行白鹭。
+
+杭州的美在于它的分寸感。它不像上海那样咄咄逼人，也不像苏州那样精致到让人紧张。杭州的精致是松弛的——西湖边的长椅上，你可以坐一整个下午什么都不做，只是看云、看水、看柳枝在风中摇摆。这就是杭州人说的"杭式生活"：不急不躁，把日子过成诗。`,
+
+    highlights: [
+      { icon: 'Waves', title: '西湖十景', description: '苏堤春晓、断桥残雪、雷峰夕照——每一个季节、每一个时段，西湖都有不同的表情' },
+      { icon: 'Coffee', title: '龙井问茶', description: '在狮峰山下的龙井村，亲手采一捧明前嫩芽，在茶农家中品一杯真正的西湖龙井' },
+      { icon: 'TreePine', title: '灵隐禅踪', description: '千年古刹藏于飞来峰下，在晨钟暮鼓与石窟造像之间，感受江南佛国的静谧力量' },
+      { icon: 'Cloud', title: '西溪且留下', description: '在杭州的"城市之肺"中摇橹穿行，芦苇荡、水鸟、湿地村落——这是江南最后的渔隐' },
+    ],
+
+    attractions: [
+      {
+        id: 'west-lake',
+        name: '西湖',
+        coordinates: { lat: 30.2440, lng: 120.1440 },
+        description: '三面云山一面城，湖中有岛、岛中有湖。苏堤与白堤将湖面分为外湖、里湖与岳湖。环湖一周约15公里，可骑行、步行或乘船。春有苏堤春晓，夏有曲院风荷，秋有平湖秋月，冬有断桥残雪。',
+        category: '自然',
+        rating: 5,
+        bestTime: '清晨和黄昏最美，避开周末人流',
+      },
+      {
+        id: 'leifeng-pagoda',
+        name: '雷峰塔',
+        coordinates: { lat: 30.2350, lng: 120.1480 },
+        description: '矗立于西湖东南岸夕照山上，是西湖十景"雷峰夕照"的主角。登塔可俯瞰西湖全景与杭州市区。白蛇传的传说让这座塔更多了几分凄美的浪漫。',
+        category: '地标',
+        rating: 5,
+        bestTime: '傍晚登塔，看夕阳洒在西湖上',
+      },
+      {
+        id: 'lingyin-temple',
+        name: '灵隐寺',
+        coordinates: { lat: 30.2430, lng: 120.0970 },
+        description: '中国十大名刹之一，始建于东晋咸和元年（公元326年）。飞来峰上的五代、宋元摩崖石刻造像精彩绝伦。清晨入寺听早课，体验最纯粹的江南禅意。',
+        category: '寺庙',
+        rating: 5,
+        bestTime: '清晨 7:00-9:00，避开游客高峰',
+      },
+      {
+        id: 'longjing-tea',
+        name: '龙井村',
+        coordinates: { lat: 30.2240, lng: 120.1220 },
+        description: '西湖龙井的核心产区。沿十里琅珰古道徒步，穿越层层茶园，空气中弥漫着茶树的清香。春季采茶时节最为动人。在茶农家品一杯明前龙井，体会"色绿、香郁、味甘、形美"的四绝。',
+        category: '美食',
+        rating: 4,
+        bestTime: '3月下旬至4月采茶季',
+      },
+      {
+        id: 'xixi-wetland',
+        name: '西溪湿地',
+        coordinates: { lat: 30.2730, lng: 120.0650 },
+        description: '距离西湖仅五公里的城中湿地。乘摇橹船穿行于芦苇荡与小岛之间，水鸟在船头飞过，柿子树在秋天挂满果实。电影《非诚勿扰》在此取景后名声大噪，但它依然保持着自己宁静的节奏。',
+        category: '自然',
+        rating: 4,
+        bestTime: '秋季芦苇花开，冬季候鸟栖息',
+      },
+      {
+        id: 'hefang-street',
+        name: '河坊街',
+        coordinates: { lat: 30.2400, lng: 120.1710 },
+        description: '杭州最著名的历史文化街区，青石板路两侧是明清风格的商铺。定胜糕、葱包桧、西湖藕粉——一路走一路吃。胡庆余堂国药号、张小泉剪刀等百年老字号坐落于此。',
+        category: '美食',
+        rating: 4,
+        bestTime: '傍晚至夜间，气氛最浓',
+      },
+    ],
+
+    experiences: [
+      {
+        id: 'west-lake-cycling',
+        title: '环湖骑行',
+        description: '租一辆自行车，沿苏堤、白堤、杨公堤环湖一周。春风拂面，柳枝摇曳，每个转角都有不同的湖光山色。全程约15公里，走走停停需要半天时间。',
+        category: '户外',
+        duration: '3-4 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'longjing-tasting',
+        title: '龙井品茗',
+        description: '在龙井村的茶农家中体验从采摘到冲泡的全过程。看着嫩绿的茶叶在玻璃杯中直立下沉，闻着豆花香在鼻尖绽放——这才是杭州的正确打开方式。',
+        category: '文化',
+        duration: '2 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'xixi-boat',
+        title: '西溪摇橹',
+        description: '在"一曲溪流一曲烟"的西溪湿地中，乘一叶摇橹船缓缓穿行。船娘哼着江南小调，白鹭在芦苇间起落——城市的喧嚣在此刻被水声彻底淹没。',
+        category: '自然',
+        duration: '1.5 小时',
+        difficulty: '轻松',
+      },
+      {
+        id: 'hefang-food',
+        title: '河坊街夜市',
+        description: '在灯火初上时分漫步河坊街，定胜糕的糯香、葱包桧的酥脆、片儿川的鲜美——一路吃遍杭州的市井味道。最后在知味观来一笼小笼包收尾。',
+        category: '美食',
+        duration: '2 小时',
+        difficulty: '轻松',
+      },
+    ],
+
+    itinerary: [
+      {
+        day: 1,
+        title: '西湖漫步',
+        items: [
+          { time: '07:30', title: '断桥残雪', description: '从西湖十景中最富诗意的断桥开始一天的漫步。清晨人少，看朝阳洒在湖面，远眺保俶塔的秀美轮廓。', type: '活动' },
+          { time: '09:00', title: '白堤—孤山', description: '沿白堤步行至孤山，参观西泠印社与浙江省博物馆。孤山不高但文化密度极大，是西湖的人文心脏。', type: '活动' },
+          { time: '12:00', title: '楼外楼午餐', description: '在"山外青山楼外楼"的楼外楼品尝西湖醋鱼、东坡肉、龙井虾仁——用舌尖感受杭州。', type: '餐饮' },
+          { time: '14:00', title: '乘船游湖', description: '从湖滨码头乘船前往三潭印月（小瀛洲），看一元人民币背面的风景。', type: '活动' },
+          { time: '17:00', title: '雷峰夕照', description: '在日落时分登上雷峰塔，俯瞰金色夕阳洒满西湖水面。这是杭州最美的时刻。', attractionId: 'leifeng-pagoda', type: '活动' },
+          { time: '19:00', title: '南山路晚餐', description: '沿南山路找一家格调餐厅，在西湖夜景中结束第一天。', type: '餐饮' },
+        ],
+      },
+      {
+        day: 2,
+        title: '禅茶一味',
+        items: [
+          { time: '07:00', title: '灵隐早课', description: '清晨入灵隐寺，在晨钟声中感受千年古刹的宁静。探访飞来峰摩崖石刻。', attractionId: 'lingyin-temple', type: '活动' },
+          { time: '10:30', title: '龙井问茶', description: '沿十里琅珰古道徒步至龙井村，在茶农家中体验一杯正宗西湖龙井的诞生。', attractionId: 'longjing-tea', type: '活动' },
+          { time: '13:00', title: '龙井村农家菜', description: '在茶山环抱的农家小院中品尝土鸡煲、龙井虾仁和时令野菜。', type: '餐饮' },
+          { time: '15:00', title: '九溪烟树', description: '沿九溪十八涧漫步，溪水在脚边流淌，古树参天，仿佛走进了江南山水画卷。', type: '活动' },
+          { time: '18:00', title: '河坊街夜市', description: '在夜色中的河坊街穿行，定胜糕、葱包桧、片儿川——用胃完成杭州的夜市打卡。', attractionId: 'hefang-street', type: '餐饮' },
+        ],
+      },
+      {
+        day: 3,
+        title: '西溪且留下',
+        items: [
+          { time: '08:30', title: '西溪湿地', description: '乘摇橹船穿行西溪的芦苇荡与水道，看白鹭与野鸭在船边嬉戏。秋天的西溪是最美的——芦花如雪，红柿挂枝。', attractionId: 'xixi-wetland', type: '活动' },
+          { time: '11:30', title: '西溪慢生活街区', description: '湿地边的文创街区，独立书店、手作工坊、精品咖啡馆。适合悠闲的上午时光。', type: '休息' },
+          { time: '13:00', title: '西溪且留下午餐', description: '在湿地边的餐厅品尝千岛湖鱼头、笋干老鸭煲。', type: '餐饮' },
+          { time: '15:00', title: '中国茶叶博物馆', description: '走进龙井路双峰村，在中国唯一以茶为主题的国家级博物馆中，走完从鲜叶到茶汤的完整旅程。', type: '活动' },
+          { time: '17:30', title: '湖滨银泰日落', description: '在湖滨路找一家露台咖啡馆，看西湖日落。远处雷峰塔的剪影在金色天空中越来越清晰。', type: '休息' },
+          { time: '19:00', title: '告别晚宴', description: '在西湖畔的杭帮菜馆——西湖醋鱼、东坡肉、宋嫂鱼羹，用一桌江南味道为杭州之行画上句点。', type: '餐饮' },
+        ],
+      },
+    ],
+
+    seasons: [
+      { season: '春', months: '3月-5月', description: '西湖最美的季节。苏堤春晓、柳浪闻莺，龙井新茶上市——整个杭州都在花与茶香中醒来', temperature: '12°C - 25°C', rating: 5 },
+      { season: '夏', months: '6月-8月', description: '曲院风荷盛开，西湖夜游最为惬意。白日炎热但林荫道与水上微风送来清凉', temperature: '25°C - 36°C', rating: 3 },
+      { season: '秋', months: '9月-11月', description: '满陇桂雨的桂花香弥漫全城，平湖秋月如诗如画。西溪湿地的芦花与红柿是秋天的礼物', temperature: '14°C - 26°C', rating: 5 },
+      { season: '冬', months: '12月-2月', description: '断桥残雪的意境需要一场恰到好处的雪。冬日的西湖有一种萧瑟的诗意，游客最少，最安静', temperature: '1°C - 10°C', rating: 4 },
+    ],
+
+    practicalInfo: {
+      language: '普通话、杭州话，旅游区普通话通用',
+      currency: '人民币 (CNY)',
+      timezone: 'UTC+8 (东八区)',
+      visa: '无需签证（国内目的地）',
+      bestSeason: '3月-5月, 9月-11月',
+      averageCost: '¥400-1,500/天 (不含往返交通)',
+    },
+
+    aiTags: ['西湖', '龙井', '江南', '骑行', '美食', '摄影', '茶道', '园林'],
+    aiTravelStyle: '江南诗意慢旅行 — 适合文化追寻者、茶道爱好者、摄影创作者与浪漫旅人',
+  },
+
+  /* ═══════════════════════════════════════════════════════════
+     法罗群岛 — 北大西洋的尽头
+     ═══════════════════════════════════════════════════════════ */
+  {
+    id: 'faroe',
+    image: '/destinations/faroe.jpg',
+    imageAlt: '法罗群岛绿色悬崖与峡湾中的传统房屋',
+    imageMood: '壮阔孤绝',
+    imageSource: 'Unsplash photo-VIJgvx4ASuA',
+    imageProvider: 'unsplash',
+    imageLocation: 'Faroe Islands, North Atlantic',
+    imageScene: 'Green grass-covered cliff with traditional building overlooking the ocean',
+    imageSearchQuery: 'Faroe Islands dramatic cliffs green islands ocean',
+    imageVerified: true,
+    verificationMethod: 'API-verified: Unsplash VIJgvx4ASuA — Faroe Islands coastal landscape with building. MD5 unique.',
+    title: '法罗群岛',
+    subtitle: '丹麦 · 北大西洋',
+    description: '北大西洋尽头的绿色悬崖 — 风是这里唯一的王，瀑布倒流回天上，羊比人还多。',
+
+    coordinates: { lat: 62.0079, lng: -6.7845 },
+    mapViewport: { center: { lat: 62.0100, lng: -6.7800 }, zoom: 10, pitch: 55, bearing: 15 },
+
+    atmosphere: ['野性', '宁静', '冒险'],
+
+    introduction: `法罗群岛，藏在冰岛与挪威之间的北大西洋秘境。18座火山岛像巨人的牙齿一样从海中拔起，绿色草甸覆盖着陡峭的悬崖，瀑布从数百米高处直坠入海——有时候风太大，水是往上飞的。这里没有树，没有红绿灯，羊口是人口的两倍。法罗语是维京语的后裔，屋顶长草的房子是千年传统的延续。
+
+法罗群岛的美是硬核的。这里的天气可以在十分钟之内经历四季——阳光、暴雨、迷雾、彩虹轮流登场。这种不可预测性恰恰是法罗群岛的魅力所在：你永远不知道下一个转弯会遇到什么，但你确信那会是震撼人心的。每年夏季，北极海鹦回到悬崖上筑巢，圆滚滚的身体和彩色鸟喙给这片苍凉的土地带来一丝可爱。
+
+在法罗群岛旅行，你要学会与风共处。这里的徒步路线带你穿越世界上最高的海崖，经过瀑布倒流的奇观，最终抵达只有十几口人的小村庄。村庄里唯一的一间咖啡馆可能就是当地人的客厅。比起目的地，法罗群岛更像是一段向内探索的旅程——在世界尽头，你听不见城市的噪音，只能听见风的低语和自己的心跳。`,
+
+    highlights: [
+      { icon: 'Mountain', title: '海上悬湖', description: 'Sørvágsvatn湖悬浮在海面上方百米处，从特定角度看去仿佛湖水悬在海洋之上——法罗最经典的视觉幻象' },
+      { icon: 'CloudRain', title: '瀑布倒流', description: 'Gasadalur瀑布从悬崖直坠入海，强风天里水不是向下流，而是被风吹成上升的水雾' },
+      { icon: 'Bird', title: '海鹦天堂', description: '每年夏季，成千上万只北极海鹦回到Mykines岛的悬崖上筑巢繁殖——这是北大西洋最可爱的居民' },
+      { icon: 'Home', title: '草顶木屋', description: '法罗人的传统民居以草为屋顶，在绿色山谷中仿佛从大地中生长出来——维京时代流传至今的智慧' },
+    ],
+
+    attractions: [
+      {
+        id: 'sorvagsvatn',
+        name: '海上悬湖',
+        coordinates: { lat: 62.0490, lng: -7.2060 },
+        description: '法罗群岛最著名的视觉奇观。Sørvágsvatn湖位于海面上方约100米处，从特定角度俯瞰，湖面似乎直接悬浮在海洋之上。沿悬崖徒步40分钟到达最佳观景点，这个光学幻象会让你怀疑自己的眼睛。',
+        category: '自然',
+        rating: 5,
+        bestTime: '晴天下午光线最佳',
+      },
+      {
+        id: 'gasadalur',
+        name: 'Gasadalur瀑布',
+        coordinates: { lat: 62.1070, lng: -7.4350 },
+        description: '法罗最具代表性的画面——一条白色瀑布从翠绿悬崖上直坠入海。直到2004年隧道开通前，这里的16个居民一直与外界隔绝。现在你可以在观景台上近距离感受水雾与海风的交响。',
+        category: '自然',
+        rating: 5,
+        bestTime: '清晨顺光方向拍摄效果最佳',
+      },
+      {
+        id: 'mykines',
+        name: 'Mykines鸟岛',
+        coordinates: { lat: 62.1030, lng: -7.5970 },
+        description: '北极海鹦的家园。每年5-8月，成千上万只海鹦在这座小岛的悬崖上筑巢。乘渡轮或直升机到达后，沿着木栈道穿过海鹦的栖息地——它们就在你脚边不到一米的距离打量着你。',
+        category: '自然',
+        rating: 5,
+        bestTime: '5月中旬至8月中旬',
+      },
+      {
+        id: 'torshavn',
+        name: '托尔斯港',
+        coordinates: { lat: 62.0120, lng: -6.7720 },
+        description: '世界上最小的首都之一。红色木屋在Tinganes半岛上挤挤挨挨，这里是世界上仍在运作的最古老议会所在地（始于公元825年）。在港口边的咖啡馆里喝一杯法罗本地的精酿啤酒，看渔船在雨中归港。',
+        category: '地标',
+        rating: 4,
+        bestTime: '全天，黄昏光线最柔美',
+      },
+      {
+        id: 'kalsoy',
+        name: 'Kalsoy岛灯塔',
+        coordinates: { lat: 62.3000, lng: -6.7330 },
+        description: '法罗最壮丽的徒步线路之一。沿Kalsoy岛的脊线徒步至Kallur灯塔，两侧都是垂直海崖。站在灯塔旁四面环海，风大到几乎能把人吹倒——这是法罗群岛最wild的体验。007电影《No Time to Die》曾在此取景。',
+        category: '观景点',
+        rating: 5,
+        bestTime: '夏季晴天，注意大风预警',
+      },
+      {
+        id: 'gjogv',
+        name: 'Gjógv峡谷村',
+        coordinates: { lat: 62.3230, lng: -6.9350 },
+        description: '法罗最上镜的村庄。一条200米长的天然海蚀峡谷将村庄一分为二，两侧是色彩鲜艳的木屋和漫山遍野的绿草。村里的Gjáargarður客栈以法罗羊肉和海鲜闻名——在海风中吃一顿慢炖羊肉，是法罗最有温度的体验。',
+        category: '观景点',
+        rating: 4,
+        bestTime: '下午光线温暖，适合拍摄村庄全景',
+      },
+    ],
+
+    experiences: [
+      {
+        id: 'cliff-hike',
+        title: '悬崖徒步',
+        description: '沿法罗群岛最经典的徒步线路——从海上悬湖到Gasadalur瀑布，6小时穿越草甸、悬崖与海岸线。不需要向导，只需要防水装备、充足体力和对自然的敬畏。',
+        category: '户外',
+        duration: '6 小时',
+        difficulty: '挑战',
+      },
+      {
+        id: 'puffin-watch',
+        title: '海鹦观察',
+        description: '乘渡轮前往Mykines岛（仅夏季通航），在专业向导的带领下近距离观察北极海鹦。它们是法罗群岛最可爱的"居民"，也是最好的摄影模特。',
+        category: '自然',
+        duration: '全天',
+        difficulty: '适中',
+      },
+      {
+        id: 'village-hop',
+        title: '村庄跳岛',
+        description: '租一辆车，在海底隧道与山路之间穿梭，探访法罗最偏远的村庄。每个村庄都有自己的故事——Saksun的泻湖在退潮时露出白色沙滩，Kirkjubøur的千年教堂依然矗立。',
+        category: '文化',
+        duration: '全天',
+        difficulty: '轻松',
+      },
+      {
+        id: 'faroe-home-dinner',
+        title: '法罗人家宴',
+        description: '在"heimablídni"（家庭款待）体验中，走进法罗人的家中。主人为你端上风干羊肉、发酵鱼肉和新鲜出炉的黑面包——这是理解法罗文化最直接的方式，一顿饭便是一千年的传承。',
+        category: '美食',
+        duration: '3 小时',
+        difficulty: '轻松',
+      },
+    ],
+
+    itinerary: [
+      {
+        day: 1,
+        title: '北大西洋的第一眼',
+        items: [
+          { time: '08:00', title: '抵达Vágar机场', description: '降落在世界上最美的小型机场之一。机场跑道就在海边，降落时脚下就是北大西洋的波涛。', type: '交通' },
+          { time: '09:30', title: '海上悬湖', description: '驱车前往Sørvágsvatn湖，沿悬崖徒步至最佳观景点。看湖水如何神奇地"悬浮"在海面上。', attractionId: 'sorvagsvatn', type: '活动' },
+          { time: '12:30', title: 'Gasadalur瀑布', description: '步行到法罗最出片的瀑布前。翠绿的悬崖、白色的瀑布、深蓝的海洋——这就是法罗群岛的明信片。', attractionId: 'gasadalur', type: '活动' },
+          { time: '14:00', title: 'Bøur村午餐', description: '在瀑布附近的小村庄里野餐或找一家当地咖啡馆。草顶小屋就在你眼前。', type: '餐饮' },
+          { time: '16:00', title: '前往托尔斯港', description: '穿过海底隧道前往首都。隧道里的彩色灯光是法罗特有的公路艺术。', type: '交通' },
+          { time: '18:00', title: '托尔斯港漫步', description: '在Tinganes半岛的红房子之间穿行，感受千年议会的历史重量。在港口餐厅品尝第一顿法罗海鲜。', attractionId: 'torshavn', type: '活动' },
+        ],
+      },
+      {
+        day: 2,
+        title: '岛屿尽头的灯塔',
+        items: [
+          { time: '07:30', title: '渡轮前往Kalsoy', description: '从Klaksvík乘渡轮前往狭长的Kalsoy岛。风大浪急是常态——法罗天气是最好的滤镜。', type: '交通' },
+          { time: '09:30', title: 'Kallur灯塔徒步', description: '沿脊线徒步至Kallur灯塔。两侧都是数百米的垂直海崖。007曾在此拍摄——你自己就是这部电影的主角。', attractionId: 'kalsoy', type: '活动' },
+          { time: '13:00', title: '返回Klaksvík午餐', description: '法罗第二大城市，渔业之都。在港口边的鱼餐厅品尝当天上岸的新鲜鳕鱼。', type: '餐饮' },
+          { time: '15:30', title: 'Gjógv峡谷村', description: '驱车前往法罗最美的村庄。天然海蚀峡谷将村庄一分为二，彩色木屋散落在绿色山坡上。', attractionId: 'gjogv', type: '活动' },
+          { time: '18:30', title: 'Gjáargarður客栈晚餐', description: '在Gjógv村的客栈里慢炖法罗羊肉，窗外是北大西洋的落日与海浪。这一餐会让你理解为什么法罗人如此热爱他们的岛屿。', type: '餐饮' },
+        ],
+      },
+      {
+        day: 3,
+        title: '海鹦与维京遗梦',
+        items: [
+          { time: '08:00', title: 'Mykines渡轮', description: '（夏季限定）乘渡轮前往海鹦之岛。船程约45分钟，已经可以看到海鹦在你头顶飞过。', type: '交通' },
+          { time: '09:00', title: '海鹦观察', description: '沿Mykines木栈道穿过海鹦栖息地。它们就在你脚边，歪着头看你——这是地球上最治愈的野生动物体验。', attractionId: 'mykines', type: '活动' },
+          { time: '13:00', title: '返回并午餐', description: '乘渡轮回到Vágar岛。在机场附近的咖啡馆简单午餐。', type: '餐饮' },
+          { time: '15:00', title: 'Kirkjubøur千年教堂', description: '法罗最古老的文化遗址。建于13世纪的圣马格努斯大教堂和900年历史的黑木屋，讲述着维京后裔的信仰故事。', type: '活动' },
+          { time: '17:30', title: '法罗人家宴', description: '在托尔斯港附近的法罗人家里体验heimablídni。风干羊肉、发酵鱼肉、黑面包——一顿饭是一千年的传承，也是最真诚的文化对话。', type: '餐饮' },
+        ],
+      },
+    ],
+
+    seasons: [
+      { season: '春', months: '4月-5月', description: '候鸟归来，草地上冒出新绿。天气仍多变但日照开始变长，游客稀少', temperature: '3°C - 9°C', rating: 3 },
+      { season: '夏', months: '6月-8月', description: '法罗群岛的黄金季节。午夜太阳让每天都有20+小时的日照，海鹦在悬崖上筑巢。所有徒步线路开放', temperature: '8°C - 13°C', rating: 5 },
+      { season: '秋', months: '9月-10月', description: '苔原变成金红色，风暴开始造访。这是最戏剧性的季节——巨浪拍崖，风雨交加，摄影的好时机', temperature: '5°C - 10°C', rating: 4 },
+      { season: '冬', months: '11月-3月', description: '暴风、大雪与极夜的交替。大部分徒步线路关闭，但极光在晴朗的夜空中起舞。这是最hardcore的法罗体验', temperature: '0°C - 5°C', rating: 2 },
+    ],
+
+    practicalInfo: {
+      language: '法罗语、丹麦语，英语广泛通用',
+      currency: '法罗克朗 (DKK，与丹麦克朗等值)',
+      timezone: 'UTC+0 (格林威治时间，夏令时UTC+1)',
+      visa: '申根签证（丹麦）',
+      bestSeason: '6月-8月',
+      averageCost: 'DKK 800-2,500/天 (不含国际机票)',
+    },
+
+    aiTags: ['悬崖', '徒步', '海鹦', '瀑布', '峡湾', '摄影', '岛屿', '维京', '极光'],
+    aiTravelStyle: '极地荒野探险 — 适合徒步爱好者、风光摄影师、野生动物观察者与孤独旅人',
+  },
 ];

@@ -19,7 +19,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     story: '凌晨四点的寒风中等待，当第一缕阳光点燃菲茨罗伊峰的瞬间，所有的疲惫都化为对自然的敬畏。这一刻，光有了形状。',
     mood: '敬畏',
     category: '自然',
-    imageRationale: '高山晨曦 alpenglow — 金色阳光与雪峰的戏剧性反差，体现自然摄影的极致光影追求',
+    imageRationale: '菲茨罗伊峰日出 alpenglow — 粉色晨曦映照雪峰，与文字"凌晨四点寒风中等待第一缕阳光"完美匹配。API验证：Mt. Fitz Roy on sunrise by Andrew Svk',
   },
   {
     image: '/gallery/02-coast.jpg',
